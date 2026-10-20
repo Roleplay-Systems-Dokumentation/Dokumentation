@@ -32,6 +32,11 @@
                   "modules/haussystem",
                   "modules/ingame-hilfe",
                   "modules/personensystem",
+                  "modules/schichten",
+                  "modules/serverstatus",
+                  "modules/teamlisten",
+                  "modules/tickets",
+                  "modules/welcomer",
                   "title-roleplay-management-description-verwalte-den-rp-status-deines-servers-mit-automatisierten-ankuendigungen-steuer-panels-und-dm-benachrichtigungen-icon-gamepad-group-badge-text-roleplay-modul",
                   "verifikation"
                 ]

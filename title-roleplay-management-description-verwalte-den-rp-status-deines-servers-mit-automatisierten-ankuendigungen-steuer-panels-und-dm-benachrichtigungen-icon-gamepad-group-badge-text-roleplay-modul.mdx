@@ -1,103 +1,68 @@
 ---
 title: "Roleplay Management"
-description: "Verwalte den RP-Status deines Servers mit automatisierten Ankündigungen, Steuer-Panels und DM-Benachrichtigungen."
+description: "Verwalte den RP-Status deines Servers mit Ankündigungen und einem interaktiven Team-Panel."
 icon: "activity"
 ---
 
-<Badge color="purple">Roleplay-Modul</Badge> <Badge color="green">Setup-Dauer: 3 Min.</Badge>
+<Badge color="purple">Roleplay</Badge> <Badge color="green">Setup über Discord</Badge>
 
-Das **Roleplay Management-Modul** (RP-Management-Modul) bietet eine zentrale Steuerung des RP-Status auf deinem Server. Über ein interaktives Steuer-Panel kann dein Team das Roleplay starten oder stoppen. Der Bot aktualisiert daraufhin die Statusnachricht und informiert deine Community in den vorgesehenen Kanälen.
-
----
+Das Roleplay-Management-Modul steuert den RP-Status deines Servers über ein interaktives Panel. Dein Team kann das Roleplay starten oder stoppen. Der Bot aktualisiert die Statusnachricht und informiert die Community in den vorgesehenen Kanälen.
 
 ## Modul einrichten und bearbeiten
 
-Richte das Modul mit `/rp_setup` in Discord ein. Eine vorhandene Konfiguration kannst du im Web-Dashboard anpassen; dort kannst du das Modul nicht neu aktivieren.
+Richte das Modul mit `/rp_setup` in Discord ein. Eine vorhandene Konfiguration kannst du im Web-Dashboard anpassen; ein neues Modul lässt sich dort nicht aktivieren.
 
 <Tabs>
   <Tab title="Via Discord-Befehl" icon="discord">
     <Steps>
-      <Step title="Setup-Befehl ausführen">
-        Führe den Slash-Befehl `/rp_setup` aus, um den interaktiven Konfigurations-Assistenten zu starten.
+      <Step title="Setup-Assistenten starten">
+        Führe `/rp_setup` aus, um den interaktiven Konfigurations-Assistenten zu öffnen.
       </Step>
       <Step title="Kanäle festlegen">
-        Definiere die Zielkanäle für das Modul:
-
-        - **RP-Ankündigungs-Kanal:** Hier werden die Start- und Stopp-Nachrichten gepostet.
-        - **Panel-Kanal (Optional):** Der Kanal, in dem das permanente Steuer-Panel für dein Team platziert wird.
+        Wähle den Ankündigungs-Kanal und optional den Panel-Kanal für dein Team aus.
       </Step>
       <Step title="Berechtigungen festlegen">
-        Bestimme optional spezifische Rollen, die berechtigt sind, das Roleplay über das Panel oder Befehle zu starten und zu stoppen.
+        Bestimme, welche Rollen das Roleplay über Panel oder Befehle starten und stoppen dürfen.
       </Step>
-      <Step title="Start- & Stopp-Nachrichten anpassen">
-        Passe Texte, Embeds, Farben und Bilder für die Start- und Stopp-Meldungen individuell über die interaktiven Buttons an.
+      <Step title="Nachrichten anpassen">
+        Passe Texte, Embeds, Farben und Bilder für Start- und Stopp-Meldungen an.
       </Step>
-      <Step title="Panel platzieren">
-        Klicke im Konfigurationsmenü auf **"Panel hier senden"**, um das Steuermenü im gewünschten Kanal zu veröffentlichen.
+      <Step title="Panel veröffentlichen">
+        Nutze **Panel hier senden**, um das Steuer-Panel im vorgesehenen Kanal zu veröffentlichen.
       </Step>
     </Steps>
   </Tab>
+  <Tab title="Im Web-Dashboard" icon="sliders">
+    Bearbeite die vorhandenen Texte, Kanäle und Einstellungen des Moduls. Das Dashboard kann das Roleplay-Modul nicht neu aktivieren.
+  </Tab>
 </Tabs>
-
----
 
 ## Kernfunktionen im Überblick
 
 <CardGroup cols={3}>
-  <Card title="Live-Status Panel" icon="activity">
-    Ein permanentes Steuer-Panel für dein Team zum nahtlosen Umschalten zwischen _Gestartet_ und _Gestoppt_.
+  <Card title="Live-Status-Panel" icon="activity">
+    Dein Team kann den Status zwischen **Gestartet** und **Gestoppt** umschalten.
   </Card>
-
-  <Card title="DM-Benachrichtigungen" icon="message-2-check">
-    Spieler können sich automatisch per Direktnachricht (DM) benachrichtigen lassen, sobald die RP-Runde startet.
+  <Card title="Start- und Stopp-Nachrichten" icon="message">
+    Informiere die Community mit individuell angepassten Meldungen.
   </Card>
-
-  <Card title="Flexible Rechte" icon="arrow-merge-alt-right">
-    Lege exakt fest, welche Team-Rollen den RP-Status verändern dürfen, um Missbrauch zu verhindern.
+  <Card title="DM-Benachrichtigungen" icon="bell">
+    Mitglieder können sich über `/rp_dm_settings` für RP-Start-Benachrichtigungen per DM anmelden.
   </Card>
 </CardGroup>
 
----
-
 ## Einstellungen & Parameter
 
-<AccordionGroup>
-  <Accordion title="Ankündigungen & Embeds anpassen" icon="settings-plus">
-    Du kannst die Benachrichtigungen für beide Zustände (Start & Stopp) individuell gestalten:
+Du kannst die Start- und Stopp-Meldungen jeweils anpassen:
 
-    - **Titel & Nachricht:** Formuliere den Infotext und Anweisungen für deine Spieler.
-    - **Bild- / Banner-URL (Optional):** Füge eine Grafik oder ein Banner ein, um die Nachricht optisch hervorzuheben.
-    - **Ping-Rolle (Optional):** Wähle eine Rolle aus, die bei einem RP-Start automatisch benachrichtigt wird.
-  </Accordion>
+- **Titel und Nachricht:** Formuliere die Informationen für deine Community.
+- **Bild- oder Banner-URL:** Ergänze optional eine Grafik.
+- **Ping-Rolle:** Wähle bei Bedarf eine Rolle aus, die beim RP-Start benachrichtigt wird.
 
-  <Accordion title="RP-Direktnachrichten (DM-System)" icon="bell">
-    Über das integrierte DM-Benachrichtigungssystem werden Spieler direkt angeschrieben, sobald eine Runde startet.
+Das Steuer-Panel kannst du über `/rp_panel-resend` oder die Setup-Option **Panel hier senden** erneut veröffentlichen. Der RP-Status und das Panel werden bei Änderungen synchronisiert.
 
-    - **Ereignis-Steuerung:** Kann global oder pro Server aktiviert/deaktiviert werden.
-    - **Zielgruppe:** Erreicht alle Nutzer mit erteilter Zustimmung oder gezielt ausgewählte Rollen.
-    - **Nutzer-Einwilligung:** Nutzer müssen dem Empfang von DMs zuvor selbstständig mit dem Befehl `/rp_dm_settings` zugestimmt haben.
-  </Accordion>
+## Wichtige Hinweise
 
-  <Accordion title="Panel-Verwaltung & Auto-Updates" icon="edit">
-    - **Panel neu senden:** Sollte das Steuer-Panel im Chat untergehen, kannst du es jederzeit über den Befehl `/rp_panel-resend` oder die Setup-Option **"Panel hier senden"** neu ausgeben lassen.
-    - **Automatische Migration:** Ältere RP-Konfigurationen werden beim Laden vom Bot automatisch auf die neueste Version aktualisiert, ohne dass deine Einstellungen verloren gehen.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Wichtige Admin-Hinweise
-
-<Tip>
-  **Visueller Anreiz:** Nutze ansprechende Banner-URLs für die Start-Nachricht, um direkt Vorfreude auf die RP-Runde zu erzeugen und die Aufmerksamkeit deiner Community im Chat zu maximieren!
-</Tip>
-
-<Note>
-  **DM-Einstellungen für Spieler:** Erinnere deine Community daran, dass der Empfang von RP-Benachrichtigungen per Direktnachricht aus Datenschutzgründen erst über den Befehl `/rp_dm_settings` freigeschaltet werden muss.
-</Note>
-
----
-
-<Card title="Brauchst du Hilfe beim Setup?" icon="discord" href="discordInvite">
-  Du hast Fragen oder brauchst Unterstützung bei der Konfiguration des RP-Moduls? Tritt unserem Discord-Server bei!
-</Card>
+- Vergib die Berechtigung zum Starten und Stoppen nur an vorgesehene Teamrollen.
+- Mitglieder müssen den DM-Benachrichtigungen mit `/rp_dm_settings` selbst zustimmen.
+- Verwende für Banner eine dauerhaft erreichbare Bild-URL.

@@ -1,114 +1,75 @@
 ---
 title: "Verifikation"
-description: "Schütze deinen Discord-Server mit flexiblen Verifizierungs-Stufen effektiv vor Raids und Bot-Angriffen."
+description: "Schütze deinen Discord-Server mit flexiblen Verifizierungsstufen vor Raids und Bot-Angriffen."
 icon: "shield-check"
 ---
 
-<Badge color="blue">Sicherheits-Modul</Badge> <Badge color="green">Setup-Dauer: 2 Min.</Badge>
+<Badge color="purple">Sicherheit</Badge> <Badge color="green">Setup über Discord</Badge>
 
-Das **Verifikations-Modul** bietet deinem Server einen robusten Schutzschild gegen automatisierte Bot-Angriffe und Raids. Neue Mitglieder müssen den Verifizierungsprozess erfolgreich durchlaufen, bevor ihnen Zugriff auf die Kanäle gewährt wird.
+Das Verifikations-Modul schützt deinen Server vor automatisierten Bot-Angriffen und Raids. Neue Mitglieder durchlaufen einen Verifizierungsprozess, bevor sie Zugriff auf die vorgesehenen Kanäle erhalten.
 
----
+## Modul einrichten und bearbeiten
 
-## Modul einrichten
-
-Du kannst das Setup direkt über deinen Discord-Server oder ganz bequem über unser Web-Dashboard starten.
+Richte das Modul mit `/verifikation_setup` auf deinem Discord-Server ein. Im Dashboard kannst du anschließend eine bestehende Konfiguration anpassen; ein neues Modul lässt sich dort nicht aktivieren.
 
 <Tabs>
   <Tab title="Via Discord-Befehl" icon="discord">
     <Steps>
       <Step title="Setup-Befehl ausführen">
-        Führe auf deinem Server den Slash-Befehl `/verifikation_setup` aus.
+        Führe `/verifikation_setup` aus, um das Setup zu starten.
       </Step>
-      <Step title="Zielkanal festlegen">
-        Wähle den Kanal aus, in dem die Verifizierungs-Nachricht (inklusive Interaktions-Button) gesendet werden soll.
-      </Step>
-      <Step title="Rollen zuweisen">
-        Bestimme die zwei zentralen Rollen für das System:
-
-        - **Unverified-Rolle:** Wird neuen Mitgliedern beim Beitritt zugewiesen (schränkt Rechte ein).
-        - **Verified-Rolle:** Wird nach erfolgreicher Verifikation vergeben (schaltet Kanäle frei).
+      <Step title="Kanal und Rollen festlegen">
+        Wähle den Kanal für das Verifikations-Panel sowie die **Unverified-Rolle** und **Verified-Rolle** aus.
       </Step>
       <Step title="Sicherheitsstufe wählen">
-        Wähle zwischen **Level 1**, **Level 2**, **Level 3** oder **Level 4**, um den Schutzfaktor festzulegen.
+        Wähle eine der vier Verifikationsstufen aus.
       </Step>
-      <Step title="Optionen & Abschluss">
-        Lege optional einen Log-Kanal fest und aktiviere `Auto-Unverified bei Join`. Klicke anschließend auf **Setup abschließen**.
-
-        <Tip>
-          Die Konfigurationsnachricht kann nach dem Abschluss gelöscht werden, sofern sie nicht `ephemeral` (nur für dich sichtbar) versendet wurde.
-        </Tip>
+      <Step title="Optionen festlegen">
+        Lege optional einen Log-Kanal fest und entscheide, ob neue Mitglieder automatisch die Unverified-Rolle erhalten.
       </Step>
     </Steps>
   </Tab>
-
-  <Tab title="Via Web-Dashboard" icon="sliders">
-    1. Logge dich im **Dashboard** ein und wähle deinen Server aus.
-    2. Navigiere in der linken Menüleiste zum Punkt **Verifikation**.
-    3. Aktiviere den Regler **Modul aktivieren**.
-    4. Wähle deine Kanäle, Rollen und die gewünschte Sicherheitsstufe aus.
-    5. Klicke unten rechts auf **Speichern**.
+  <Tab title="Im Web-Dashboard" icon="sliders">
+    Passe die vorhandene Verifikations-Konfiguration an. Im Dashboard kannst du keine neue Modulkonfiguration aktivieren.
   </Tab>
 </Tabs>
 
----
-
-## Sicherheitsstufen (Verifikations-Level)
-
-Wähle die passende Sicherheitsstufe für deine Community. Du kannst diese Stufen jederzeit im laufenden Betrieb anpassen:
+## Kernfunktionen im Überblick
 
 <CardGroup cols={2}>
   <Card title="Level 1: DM + Button" icon="message">
-    Der User klickt auf den Server-Button und erhält eine **Direktnachricht (DM)** vom Bot. Erst nach der Bestätigung in der DM wird die Rolle vergeben.
+    Mitglieder bestätigen die Verifikation über einen Button in einer Direktnachricht.
   </Card>
-
   <Card title="Level 2: Instant-Button" icon="bolt">
-    Die schnelle **Sofort-Verifikation**. Ein einziger Klick auf den Button im Verifikations-Kanal schaltet den Server direkt frei.
+    Ein Klick auf den Button im Verifikations-Kanal schließt die Verifikation ab.
   </Card>
-
-  <Card title="Level 3: DM + Support-Server" icon="file-symlink">
-    Höchster Schutz. Der User muss die DM bestätigen **und** zusätzlich Mitglied auf dem offiziellen Support-Server sein.
+  <Card title="Level 3: DM + Support-Server" icon="users">
+    Mitglieder bestätigen die DM und müssen zusätzlich dem offiziellen Support-Server angehören.
   </Card>
-
-  <Card title="Level 4: DM + Zufallscode" icon="user-code">
-    Der User klickt auf den Server-Button und erhält eine **Direktnachricht (DM)** vom Bot, in der ein zufälliger Code zur Bestätigung eingegeben werden muss.
+  <Card title="Level 4: DM + Zufallscode" icon="key">
+    Mitglieder bestätigen die Verifikation durch Eingabe eines Codes, den sie per DM erhalten.
   </Card>
 </CardGroup>
 
----
-
 ## Einstellungen & Parameter
 
-<AccordionGroup>
-  <Accordion title="Kanäle & Rollen-Konfiguration" icon="network-wired">
-    - **Verifikations-Kanal:** Der öffentlich sichtbare Kanal (z. B. `#🔑・verifikation`), in dem das Panel eingebunden wird.
-    - **Log-Kanal (Optional):** Protokolliert Beitritte, erfolgreiche sowie fehlgeschlagene Verifikationsversuche.
-    - **Unverified-Rolle:** Schränkt die Berechtigungen neuer Mitglieder temporär ein.
-    - **Verified-Rolle:** Verleiht vollen Zugriff auf deine Community-Kanäle.
-  </Accordion>
+- **Verifikations-Kanal:** Kanal, in dem das öffentliche Verifikations-Panel erscheint.
+- **Log-Kanal (optional):** Protokolliert Beitritte sowie erfolgreiche und fehlgeschlagene Verifikationsversuche.
+- **Unverified-Rolle:** Schränkt neue Mitglieder bis zum Abschluss der Verifikation ein.
+- **Verified-Rolle:** Wird nach erfolgreicher Verifikation vergeben.
+- **Auto-Unverified bei Join:** Weist neuen Mitgliedern automatisch die Unverified-Rolle zu.
+- **Sprachanpassung:** Passe die Sprache der Verifikationsnachrichten an.
 
-  <Accordion title="Erweiterte Optionen" icon="gear">
-    - **Auto-Unverified bei Join:**
-      - **Aktiviert (`Ja`):** Verweist jeden neuen Serverbeitritt automatisch in die _Unverified_-Rolle.
-      - **Deaktiviert (`Nein`):** Mitglieder bleiben bis zur Verifikation ohne gesonderte Rolle.
-    - **Sprachanpassung:** Passe die Sprache der Verifizierungs-Nachrichten individuell an deine Zielgruppe an.
-  </Accordion>
-</AccordionGroup>
+Du kannst die Sicherheitsstufe im laufenden Betrieb anpassen.
 
----
-
-## Wichtige Admin-Hinweise
+## Wichtige Hinweise
 
 <Warning>
-  **Rollen-Hierarchie beachten:** Stelle sicher, dass die Rolle des Bots in den Discord-Servereinstellungen **über** der _Verified_- und _Unverified_-Rolle platziert ist. Andernfalls kann der Bot keine Rollen zuweisen oder entfernen!
+  Stelle sicher, dass die Bot-Rolle in den Discord-Servereinstellungen über der Verified- und Unverified-Rolle liegt. Andernfalls kann der Bot die Rollen nicht vergeben oder entfernen.
 </Warning>
 
 <Note>
-  **Best Practice zur Rechtevergabe:** Konfiguriere die Berechtigungen der `Unverified`-Rolle so, dass Mitglieder **ausschließlich** den Verifikations-Kanal sehen und lesen können. Alle anderen Kanäle sollten für diese Rolle komplett ausgeblendet sein.
+  Konfiguriere die Unverified-Rolle so, dass Mitglieder nur den Verifikations-Kanal sehen können. Gib dem Bot außerdem Schreib- und Rollenverwaltungsrechte, die er für das Setup benötigt.
 </Note>
 
----
-
-<Card title="Brauchst du Hilfe beim Setup?" icon="discord" href="discordInvite">
-  Du hast Fragen oder suchst Unterstützung bei der Konfiguration? Tritt unserem Discord-Server bei!
-</Card>
+Bei Fragen zum Setup kannst du unseren Supportserver besuchen.
