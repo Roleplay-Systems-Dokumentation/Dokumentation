@@ -1,0 +1,71 @@
+---
+title: "Vorlage: Modul-Dokumentation"
+description: "Kopierbare Grundstruktur für eine einheitliche Modulseite."
+icon: "file-code"
+---
+
+Nutze diese Vorlage als Ausgangspunkt für eine neue Modulseite. Ersetze eckige Platzhalter, bestätige alle Angaben und entferne nicht passende Bereiche, bevor du die Seite veröffentlichst.
+
+```mdx
+---
+title: "[Modulname]"
+description: "[Kurze Beschreibung des Nutzens und der Hauptfunktion.]"
+icon: "[Tabler-Icon]"
+---
+
+<Badge color="purple">[Kategorie]</Badge> <Badge color="green">[Setup-Hinweis]</Badge>
+
+[Kurze Einführung: Was macht das Modul und für wen ist es gedacht?]
+
+## Modul einrichten und bearbeiten
+
+[Slash-Befehl und Erklärung, ob das Setup-Menü ephemer ist.]
+
+<Tabs>
+  <Tab title="Via Discord-Befehl" icon="discord">
+    <Steps>
+      <Step title="[Schritt 1]">
+        [Aktion und benötigte Angaben.]
+      </Step>
+      <Step title="[Schritt 2]">
+        [Nächster Einrichtungsschritt.]
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Im Web-Dashboard" icon="sliders">
+    [Nur beschreiben, was eine vorhandene Konfiguration tatsächlich anpassen kann.
+    Das Dashboard aktiviert keine neue Modulkonfiguration.]
+  </Tab>
+</Tabs>
+
+## Kernfunktionen im Überblick
+
+<CardGroup cols={3}>
+  <Card title="[Funktion 1]" icon="[icon]">
+    [Kurze Beschreibung.]
+  </Card>
+  <Card title="[Funktion 2]" icon="[icon]">
+    [Kurze Beschreibung.]
+  </Card>
+  <Card title="[Funktion 3]" icon="[icon]">
+    [Kurze Beschreibung.]
+  </Card>
+</CardGroup>
+
+## Einstellungen & Parameter
+
+[Parameter, Auswahlmöglichkeiten und Beispiele dokumentieren.]
+
+## Wichtige Hinweise
+
+- [Berechtigungen und Voraussetzungen.]
+- [Grenzen, Datenschutz oder Abhängigkeiten.]
+```
+
+## Vor der Veröffentlichung
+
+- Stimmen Slash-Befehl, Parameter und Bezeichnungen mit dem tatsächlichen Modul überein?
+- Ist klar, ob die Einrichtung über ein ephemeres Menü erfolgt?
+- Sind Dashboard-Möglichkeiten als Anpassung statt Aktivierung beschrieben?
+- Funktionieren die Navigationseinträge und internen Links?
+- Sind Platzhalter, interne Notizen und unbelegte Behauptungen entfernt?
