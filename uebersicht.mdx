@@ -4,77 +4,59 @@ icon:
   name: "home"
   style: "regular"
   library: "tabler"
-description: "Entdecke alle Module und Funktionen deines Bots, um deinen Discord-Server optimal einzurichten."
+description: "Finde Einrichtung, Einstellungen und Hinweise zu den Modulen deines Discord-Bots."
 ---
 
 # Modul-Übersicht
 
-Willkommen in der Modul-Dokumentation! Hier findest du eine Übersicht aller verfügbaren Funktionen und Erweiterungen deines Bots. Jedes Modul lässt sich individuell anpassen und flexibel über Discord-Befehle oder das Web-Dashboard konfigurieren.
+Hier findest du die Dokumentation zu den Bot-Modulen. Die einzelnen Seiten führen dich durch Einrichtung, Bedienung und wichtige Berechtigungen.
+
+<Note>
+  Richte ein Modul mit dem dazugehörigen Slash-Befehl in Discord ein. Im Dashboard kannst du eine vorhandene Konfiguration anpassen; dort kannst du ein Modul nicht neu aktivieren.
+</Note>
 
 ---
 
-## Beliebte Module
+## Dokumentierte Module
 
-Wähle ein Modul aus, um mehr über dessen Einrichtung, Befehle und Funktionen zu erfahren:
-
-<CardGroup cols={2}>
-  <Card title="Roleplay Management" icon="activity" href="/title-roleplay-management-description-verwalte-den-rp-status-deines-servers-mit-automatisierten-ankuendigungen-steuer-panels-und-dm-benachrichtigungen-icon-gamepad-group-badge-text-roleplay-modul">
-    Verwalte den RP-Status deines Servers mit automatisierten Ankündigungen, Steuer-Panels und DM-Benachrichtigungen.
-  </Card>
-
-  <Card title="Ticket-System" icon="ticket" href="/bot/tickets">
-    Erstelle ein strukturiertes Support-System mit privaten Kanälen, Transkripten und Team-Berechtigungen.
-  </Card>
-</CardGroup>
-
----
-
-## Alle Module (A–Z)
-
-Hier findest du alle verfügbaren Module in alphabetischer Reihenfolge:
+Öffne eine Seite, um die Einrichtung und Bedienung des jeweiligen Moduls nachzulesen:
 
 <CardGroup cols={3}>
-  <Card title="Auto-Moderation" icon="shield-check" href="/bot/auto-moderation">
-    Automatischer Schutz vor Spam, Beleidigungen, unerwünschten Links und System-Missbrauch.
+  <Card title="Aktivitätschecks" icon="user-check" href="/modules/aktivitaetschecks">
+    Prüfe die Aktivität einer Zielrolle mit zeitlich begrenzten Rückmeldungen.
   </Card>
-
-  <Card title="Level- & XP-System" icon="trophy" href="/bot/level-system">
-    Belohne aktive Mitglieder mit Rängen, XP und automatischen Rollenbelohnungen.
+  <Card title="Anti-Bot-System" icon="shield-check" href="/modules/anti-bot">
+    Überwache einen Kanal auf verdächtige Bot-Aktivitäten und lege Maßnahmen fest.
   </Card>
-
-  <Card title="Teamliste" icon="list" href="/bot/music">
-    Zeige eine Liste mit deinen Teammitgliedern, die sich automatisch synchonisiert und bei Rollenänderungen per DM bescheid gibt.
+  <Card title="Fahrzeugverwaltung" icon="car" href="/modules/fahrzeuge">
+    Verwalte Fahrzeuge und Kennzeichen über ein Team-Menü.
   </Card>
-
-  <Card title="Roleplay Management" icon="activity" href="/bot/roleplay-management">
-    Steuere RP-Phasen mit interaktiven Panels, automatischen Ankündigungen und DM-Pings.
+  <Card title="Cases" icon="folder-open" href="/modules/sanktionen">
+    Dokumentiere In-Game-Bestrafungen und verwalte zugehörige Protokolle.
   </Card>
-
-  <Card title="Ticket-System" icon="ticket" href="/bot/tickets">
-    Ermögliche deinen Mitgliedern, private Support-Tickets bei Fragen oder Problemen zu erstellen.
+  <Card title="Entbannungen" icon="shield-check" href="/modules/entbannungen">
+    Bearbeite Entbannungsanträge in Verbindung mit dem Case-System.
   </Card>
-
-  <Card title="Willkommens-System" icon="hand-stop" href="/bot/welcome">
-    Begrüße neue Mitglieder mit individuellen Embeds, Bildern und automatischer Rollenvergabe.
+  <Card title="Geburtstagssystem" icon="cake" href="/modules/geburtstag">
+    Verwalte Geburtstage mit Einwilligung und optionalen Benachrichtigungen.
+  </Card>
+  <Card title="Giveaways" icon="gift" href="/modules/giveaway">
+    Erstelle zeitlich begrenzte Verlosungen in einem Discord-Kanal.
+  </Card>
+  <Card title="Haussystem" icon="home" href="/modules/haussystem">
+    Stelle deinem Team eine verwaltbare Häuserliste bereit.
+  </Card>
+  <Card title="Ingame-Hilfe" icon="lifebuoy" href="/modules/ingame-hilfe">
+    Nimm Hilfeanfragen über einen Button entgegen und informiere dein Team.
+  </Card>
+  <Card title="Personensystem" icon="users" href="/modules/personensystem">
+    Verwalte Personen- und Roblox-Einträge sowie optionale Rechteanfragen.
+  </Card>
+  <Card title="Roleplay Management" icon="activity" href="/title-roleplay-management-description-verwalte-den-rp-status-deines-servers-mit-automatisierten-ankuendigungen-steuer-panels-und-dm-benachrichtigungen-icon-gamepad-group-badge-text-roleplay-modul">
+    Steuere den RP-Status über Ankündigungen und ein Team-Panel.
   </Card>
 </CardGroup>
 
----
-
-## Erste Schritte & Hilfe
-
-<AccordionGroup>
-  <Accordion title="Wie aktiviere ich ein neues Modul?" icon="power">
-    Navigiere im **Web-Dashboard** zum gewünschten Modul und aktiviere den Umschalter. Alternativ kannst du bei vielen Modulen den jeweiligen Konfigurations-Befehl (z. B. `/rp_setup`) direkt in Discord ausführen.
-  </Accordion>
-
-  <Accordion title="Wer kann Module konfigurieren?" icon="lock">
-    Standardmäßig benötigen Nutzer die Berechtigung **Administrator** auf deinem Discord-Server, um Module einzurichten oder Einstellungen im Dashboard zu ändern.
-  </Accordion>
-</AccordionGroup>
-
----
-
 <Card title="Brauchst du weitere Hilfe?" icon="discord" href="/discord">
-  Du bist dir unsicher bei der Einrichtung oder ein Modul funktioniert nicht wie erwartet? Tritt unserem Discord-Server bei – unser Support-Team hilft dir gerne weiter!
+  Wenn du bei der Einrichtung Unterstützung brauchst, besuche unseren Supportserver.
 </Card>

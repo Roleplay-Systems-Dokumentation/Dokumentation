@@ -22,7 +22,16 @@
                 "group": "Bot-Module",
                 "pages": [
                   "uebersicht",
-                  "untitled-page",
+                  "modules/aktivitaetschecks",
+                  "modules/anti-bot",
+                  "modules/fahrzeuge",
+                  "modules/sanktionen",
+                  "modules/entbannungen",
+                  "modules/geburtstag",
+                  "modules/giveaway",
+                  "modules/haussystem",
+                  "modules/ingame-hilfe",
+                  "modules/personensystem",
                   "title-roleplay-management-description-verwalte-den-rp-status-deines-servers-mit-automatisierten-ankuendigungen-steuer-panels-und-dm-benachrichtigungen-icon-gamepad-group-badge-text-roleplay-modul",
                   "verifikation"
                 ]
@@ -136,10 +145,6 @@
       "discord": "https://discord.gg/zQGMKcPqqy",
       "website": "https://systems.nrw-roleplay.de"
     }
-  },
-  "banner": {
-    "content": "Wartungsarbeiten - Die Inhalte dieser Dokumentation sind veraltet.",
-    "type": "info"
   },
   "variables": {
     "discordInvite": "https://discord.gg/zQGMKcPqqy"
