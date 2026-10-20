@@ -18,6 +18,7 @@
             "pages": [
               "bot-einladen",
               "schnellstart",
+              "faq",
               {
                 "group": "Bot-Module",
                 "pages": [
@@ -45,12 +46,42 @@
           },
           {
             "group": "Bot Dashboard",
-            "pages": []
+            "pages": [
+              "dashboard",
+              "dashboard/server-verwaltung",
+              "dashboard/nutzereinstellungen",
+              "dashboard/statistiken"
+            ]
           },
           {
             "group": "Team Dashboard",
-            "pages": []
+            "pages": [
+              "team-dashboard/uebersicht"
+            ]
+          },
+          {
+            "group": "Discord-Server & Community",
+            "pages": [
+              "discord-server",
+              "supportserver",
+              "pro-features",
+              "partnerschaft",
+              "tester-werden"
+            ]
+          },
+          {
+            "group": "Hilfe & Feedback",
+            "pages": [
+              "dokumentation-feedback"
+            ]
           }
+        ]
+      },
+      {
+        "tab": "Dev",
+        "pages": [
+          "dev/uebersicht",
+          "dev/modulvorlage"
         ]
       },
       {

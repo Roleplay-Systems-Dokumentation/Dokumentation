@@ -25,6 +25,10 @@ Hier findest du Antworten auf die am häufigsten gestellten Fragen rund um das D
 ## Berechtigungen & Ansichten
 
 <AccordionGroup>
+  <Accordion title="Kann ich ein Modul über das Dashboard neu aktivieren?">
+    Nein. Richte ein neues Modul mit dem zugehörigen Slash-Befehl in Discord ein. Im Dashboard kannst du anschließend die vorhandene Konfiguration anpassen.
+  </Accordion>
+
   <Accordion title="Warum kann ich keine Module konfigurieren? (Nur-Ansicht)">
     Wenn du dich in der **Nur-Ansicht** befindest, kannst du lediglich Statistiken, Sanktionen und Schichtdaten einsehen. Um Konfigurationen (z.B. Automenü, Entbannung oder Welcomer) zu ändern, benötigst du die **Admin-Ansicht**. Diese erhältst du durch die Administrator-Berechtigung auf dem Discord-Server oder durch eine explizite Lese-/Schreibfreigabe in den Dashboard-Einstellungen des Servers.
   </Accordion>
@@ -48,7 +52,7 @@ Hier findest du Antworten auf die am häufigsten gestellten Fragen rund um das D
   </Accordion>
 
   <Accordion title="Gehen meine Einstellungen sofort live?">
-    Ja. Sobald du Änderungen in einem Modul (z.B. dem Welcomer oder dem Schicht-System) speicherst, werden diese an das System übermittelt und sind sofort auf deinem Discord-Server aktiv. Es kann bei höherer Auslastung bis zu 1 Minute dauern, bis sich die Daten mit dem Bot synchonisieren.
+    Änderungen an einer bestehenden Konfiguration werden nach dem Speichern an das System übermittelt. Je nach Auslastung kann es bis zu einer Minute dauern, bis der Bot die aktualisierten Daten verwendet. Ein neues Modul musst du zuvor mit seinem Slash-Befehl in Discord einrichten.
   </Accordion>
 </AccordionGroup>
 
@@ -59,7 +63,7 @@ Hier findest du Antworten auf die am häufigsten gestellten Fragen rund um das D
     Du hast einen Bug gefunden oder brauchst Hilfe? Erstelle ein Ticket auf unserem Support-Server.
   </Card>
 
-  <Card title="Zurück zur Übersicht" icon="arrow-left" href="/dashboard/uebersicht">
+  <Card title="Zurück zur Übersicht" icon="arrow-left" href="/dashboard">
     Lies dir noch einmal die grundlegenden Funktionen des Web-Dashboards durch.
   </Card>
 </CardGroup>
