@@ -4,34 +4,68 @@ description: "Richte das Case-Menü für In-Game-Bestrafungen, Protokolle und au
 icon: "folder-open"
 ---
 
-Das Case-System dient dazu, In-Game-Bestrafungen über ein Menü einzutragen und zu protokollieren. Du kannst dafür separate Kanäle und eine Verwaltungsrolle festlegen. Entbannungsanträge können in Verbindung mit diesem System erstellt werden.
+<Badge color="purple">Moderation</Badge> <Badge color="green">Setup-Menü</Badge>
 
-## Einrichtung
+Das Case-System dient dazu, In-Game-Bestrafungen über ein Menü einzutragen und zu protokollieren. Du kannst separate Kanäle und eine Verwaltungsrolle festlegen. Entbannungsanträge können in Verbindung mit diesem System erstellt werden.
 
-Führe `/case-setup` aus und lege im Menü die folgenden Einstellungen fest:
+## Modul einrichten und bearbeiten
 
-| Einstellung | Beschreibung |
+Führe `/case-setup` aus. Discord öffnet eine **ephemere Nachricht**, die nur du sehen kannst. Wähle darin die Kanäle und Optionen aus.
+
+<Tabs>
+  <Tab title="Via Discord-Befehl" icon="discord">
+    <Steps>
+      <Step title="Setup-Menü öffnen">
+        Führe `/case-setup` aus. Die Auswahl erscheint als ephemere Nachricht und ist nur für dich sichtbar.
+      </Step>
+      <Step title="Kanal und Verwaltungsrolle festlegen">
+        Wähle den Kanal für das Case-Menü und die Rolle, deren Mitglieder das Menü verwenden dürfen.
+      </Step>
+      <Step title="Optionale Kanäle konfigurieren">
+        Lege bei Bedarf einen Statistik-Kanal, den Bestrafungs-Log-Kanal und den Kanal für ausstehende Bans fest.
+      </Step>
+      <Step title="Beweise und Ban ausstehend einstellen">
+        Lege fest, ob beim Case ein Nachweis angehängt werden kann. Aktiviere oder deaktiviere die Funktion **Ban ausstehend**.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Im Web-Dashboard" icon="sliders">
+    Im Dashboard kannst du eine bestehende Konfiguration anpassen. Ein neues Modul lässt sich dort nicht aktivieren.
+  </Tab>
+</Tabs>
+
+## Kernfunktionen im Überblick
+
+<CardGroup cols={3}>
+  <Card title="Case-Menü" icon="clipboard">
+    Trage In-Game-Bestrafungen ein und verwalte sie über einen festgelegten Kanal.
+  </Card>
+  <Card title="Protokolle und Statistiken" icon="chart-bar">
+    Nutze separate Kanäle für Bestrafungs-Logs und eine allgemeine Statistikübersicht.
+  </Card>
+  <Card title="Ausstehende Bans" icon="clock">
+    Informiere das Team über Bans, die ausgeführt werden sollen, während ein Nutzer noch im Spiel ist.
+  </Card>
+</CardGroup>
+
+## Einstellungen & Parameter
+
+Über den Button **Kanäle automatisch erstellen** kann der Bot eine Kategorie mit den zugehörigen Kanälen erstellen. Dafür benötigt er die passenden Discord-Berechtigungen.
+
+| Einstellung | Zweck |
 | --- | --- |
-| Kanal für Cases | Kanal, in dem das Case-Menü erscheint. |
-| Rolle für Case-Verwaltung | Nur Mitglieder mit dieser Rolle dürfen das Menü verwenden. |
-| Statistik-Kanal | Optionaler Kanal für Statistiken und eine allgemeine Übersicht. |
-| Beweis erforderlich | Lege fest, ob beim Erstellen eines Cases ein Nachweis, etwa ein Screenshot oder Clip, angehängt werden kann. |
-| Kanal für Bestrafungs-Logs | Kanal für Protokolle zu Bestrafungen und Exporten. |
-| Kanal für „Ban ausstehend“ | Kanal für Nachrichten zu Bans, die ausgeführt werden sollen, während ein Nutzer noch im Spiel ist. |
+| Kanal für Cases | Kanal für das Case-Menü. |
+| Rolle für Case-Verwaltung | Berechtigt zur Nutzung des Menüs. |
+| Statistik-Kanal | Optionaler Kanal für Statistiken und Übersicht. |
+| Beweis erforderlich | Steuert, ob bei Cases ein Nachweis wie Screenshot oder Clip angehängt werden kann. |
+| Kanal für Bestrafungs-Logs | Protokolliert Bestrafungen und Exporte. |
+| Kanal für „Ban ausstehend“ | Zeigt Nachrichten zu ausstehenden In-Game-Bans. |
 
-Über den Button **Kanäle automatisch erstellen** kannst du eine Kategorie mit den zugehörigen Kanälen erstellen lassen. Der Bot benötigt dafür die passenden Discord-Berechtigungen.
-
-Im Setup kannst du außerdem **Ban ausstehend** aktivieren oder deaktivieren.
-
-<Note>
-  Richte das Modul über `/case-setup` in Discord ein. Im Dashboard kannst du eine vorhandene Konfiguration anpassen, aber kein Modul neu aktivieren.
-</Note>
-
-## Berechtigungen und Hinweise
+## Wichtige Hinweise
 
 - Vergib die Case-Verwaltungsrolle nur an zuständige Teammitglieder.
-- Wenn du die automatische Kanalerstellung verwendest, prüfe die Bot-Berechtigungen zum Erstellen von Kategorien und Kanälen.
-- Lege einen Statistik- und Log-Kanal nur fest, wenn diese Übersichten beziehungsweise Protokolle für dein Team benötigt werden.
+- Prüfe vor der automatischen Kanalerstellung die Bot-Berechtigungen zum Erstellen von Kategorien und Kanälen.
+- Richte zuerst das Case-System ein, wenn du es mit Entbannungsanträgen verwenden möchtest.
 
 <Card title="Entbannungsanträge" icon="shield-check" href="/modules/entbannungen">
   Das Entbannungssystem verwendet Cases als Grundlage für Anträge.

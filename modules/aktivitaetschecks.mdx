@@ -4,29 +4,54 @@ description: "Prüfe die Aktivität einer Zielrolle mit zeitlich begrenzten Rüc
 icon: "user-check"
 ---
 
+<Badge color="purple">Server-Verwaltung</Badge> <Badge color="green">Setup über Slash-Befehl</Badge>
+
 Mit Aktivitätschecks fragst du eine bestimmte Rolle innerhalb eines festgelegten Zeitraums ab. Mitglieder bestätigen ihre Aktivität über Buttons oder Emoji-Reaktionen.
 
-## Einrichtung
+## Modul einrichten und bearbeiten
 
-Richte das Modul mit `/aktivitaet_setup` ein. Lege dabei fest:
+Führe `/aktivitaet_setup` aus und lege die Optionen für das Modul fest.
 
-- `admin_role`: Rolle, die Aktivitätschecks verwalten darf.
-- `buttons`: `True` für Rückmeldungen per Button; andernfalls werden Emoji-Reaktionen verwendet.
-- `menu`: `True`, um ein separates Verwaltungsmenü erstellen und senden zu können.
+<Tabs>
+  <Tab title="Via Discord-Befehl" icon="discord">
+    <Steps>
+      <Step title="Setup-Befehl ausführen">
+        Führe `/aktivitaet_setup` mit der Rolle für die Verwaltung und den gewünschten Rückmeldeoptionen aus.
 
-Beispiel:
+        ```text
+        /aktivitaet_setup admin_role:@Team buttons:True menu:True
+        ```
+      </Step>
+      <Step title="Rückmeldung festlegen">
+        Setze `buttons` auf `True`, um Buttons zu verwenden. Andernfalls bestätigen Mitglieder per Emoji.
+      </Step>
+      <Step title="Verwaltungsmenü auswählen">
+        Setze `menu` auf `True`, wenn du ein separates Menü zum Erstellen und Verwalten von Checks senden möchtest.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Im Web-Dashboard" icon="sliders">
+    Im Dashboard kannst du eine bestehende Konfiguration anpassen. Ein neues Modul lässt sich dort nicht aktivieren.
+  </Tab>
+</Tabs>
 
-```text
-/aktivitaet_setup admin_role:@Team buttons:True menu:True
-```
+## Kernfunktionen im Überblick
 
-<Note>
-  Ersetze `@Team` durch die Rolle, die den Check verwalten darf. Vergib diese Berechtigung nur an vertrauenswürdige Teammitglieder. Aktiviere und richte das Modul über den Slash-Befehl in Discord ein. Im Dashboard kannst du eine vorhandene Konfiguration anpassen, aber kein Modul neu aktivieren.
-</Note>
+<CardGroup cols={3}>
+  <Card title="Button oder Emoji" icon="click">
+    Mitglieder melden ihre Aktivität über Buttons oder Emoji-Reaktionen zurück.
+  </Card>
+  <Card title="Eigene Laufzeit" icon="clock">
+    Lege beim Erstellen fest, wie lange ein Check geöffnet bleibt.
+  </Card>
+  <Card title="Check abbrechen" icon="circle-x">
+    Brich einen laufenden Check bei Bedarf ohne Auswertung ab.
+  </Card>
+</CardGroup>
 
-## Check erstellen und verwalten
+## Einstellungen & Parameter
 
-Starte einen Check mit `/aktivitaet_create` und fülle die Parameter aus:
+Erstelle einen Check mit `/aktivitaet_create`:
 
 | Parameter | Beschreibung |
 | --- | --- |
@@ -36,16 +61,16 @@ Starte einen Check mit `/aktivitaet_create` und fülle die Parameter aus:
 | `text` | Erklärung oder Anweisung für die Mitglieder. |
 | `stunden` | Laufzeit in Stunden, zum Beispiel `0.5` für 30 Minuten oder `1` für eine Stunde. |
 
-Mit `/aktivitaet_cancel` brichst du einen laufenden Check ohne Auswertung ab.
-
 Beispiel:
 
 ```text
-/aktivitaet_create channel:#Allgemein ziel:@everyone ueberschrift:Test text:Test stunden:0.5
+/aktivitaet_create channel:#Allgemein ziel:@Team ueberschrift:Aktivitätscheck text:Bitte bestätige deine Aktivität. stunden:0.5
 ```
 
-## Hinweise
+Mit `/aktivitaet_cancel` brichst du den laufenden Check ohne Auswertung ab.
 
-- Stelle sicher, dass die verwaltende Rolle nur an vertrauenswürdige Teammitglieder vergeben ist.
+## Wichtige Hinweise
+
+- Vergib die Verwaltungsrolle nur an vertrauenswürdige Teammitglieder.
 - Prüfe vor dem Start die Zielrolle, den Kanal und die Laufzeit.
 - Ein abgebrochener Check wird nicht ausgewertet.

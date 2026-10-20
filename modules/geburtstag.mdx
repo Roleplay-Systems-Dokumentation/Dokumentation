@@ -4,32 +4,60 @@ description: "Lass Mitglieder Geburtstage datenschutzbewusst hinterlegen und opt
 icon: "cake"
 ---
 
+<Badge color="purple">Community</Badge> <Badge color="green">Setup-Menü</Badge>
+
 Das Geburtstagssystem ermöglicht Mitgliedern, ein Geburtsdatum zu hinterlegen und eine Geburtstagsbenachrichtigung auszuwählen. Eine optionale Rolle kann am Geburtstag vergeben werden.
 
-## Einrichtung
+## Modul einrichten und bearbeiten
 
-Führe `/birthday-setup` aus und konfiguriere:
+Führe `/birthday-setup` aus. Discord öffnet eine **ephemere Nachricht**, die nur du sehen kannst. Wähle darin den Geburtstagskanal und optional die Geburtstagsrolle aus.
 
-- **Geburtstagskanal:** Kanal für das Geburtstagspanel und Benachrichtigungen.
-- **Geburtstagsrolle (optional):** Temporäre Rolle, die an Mitglieder mit Geburtstag vergeben wird.
+<Tabs>
+  <Tab title="Via Discord-Befehl" icon="discord">
+    <Steps>
+      <Step title="Setup-Menü öffnen">
+        Führe `/birthday-setup` aus. Die Auswahl erscheint als ephemere Nachricht und ist nur für dich sichtbar.
+      </Step>
+      <Step title="Geburtstagskanal auswählen">
+        Wähle den Kanal für das Geburtstagspanel und die Benachrichtigungen aus.
+      </Step>
+      <Step title="Optionale Rolle festlegen">
+        Wähle bei Bedarf eine temporäre Rolle für Mitglieder, die Geburtstag haben.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Im Web-Dashboard" icon="sliders">
+    Im Dashboard kannst du eine bestehende Konfiguration anpassen. Ein neues Modul lässt sich dort nicht aktivieren.
+  </Tab>
+</Tabs>
 
-<Note>
-  Richte das Modul über `/birthday-setup` in Discord ein. Im Dashboard kannst du eine vorhandene Konfiguration anpassen, aber kein Modul neu aktivieren.
-</Note>
+## Kernfunktionen im Überblick
 
-## Geburtstage verwalten
+<CardGroup cols={3}>
+  <Card title="Geburtstag eintragen" icon="calendar-plus">
+    Mitglieder können Tag und Monat hinterlegen und eine Benachrichtigung auswählen.
+  </Card>
+  <Card title="Einwilligung" icon="shield-check">
+    Das Geburtsdatum wird erst nach Bestätigung der Datenschutzabfrage gespeichert.
+  </Card>
+  <Card title="Geburtstagsrolle" icon="gift">
+    Weise Mitgliedern am Geburtstag optional eine temporäre Rolle zu.
+  </Card>
+</CardGroup>
+
+## Einstellungen & Parameter
 
 | Befehl | Zweck |
 | --- | --- |
-| `/birthday-set` | Hinterlegt Tag und Monat. Eine Geburtstagsbenachrichtigung kann optional ausgewählt werden. |
+| `/birthday-set` | Hinterlegt Tag und Monat sowie optional die gewünschte Geburtstagsbenachrichtigung. |
 | `/birthday-edit` | Ändert ein bereits hinterlegtes Geburtsdatum oder die Benachrichtigung. |
 | `/birthday-delete` | Löscht sämtliche gespeicherten Geburtstagsdaten. |
-| `/birthday-greet-resend` | Sendet die Benachrichtigung für den aktuellen Geburtstag erneut in den Geburtstagskanal. |
+| `/birthday-greet-resend` | Sendet die Benachrichtigung zum aktuellen Geburtstag erneut in den Geburtstagskanal. |
 
-Beim Hinterlegen eines Geburtstags erscheint eine Datenschutzabfrage. Das Geburtsdatum wird erst gespeichert, nachdem das Mitglied mit ✅ **Annehmen** zugestimmt hat.
+Beim Hinterlegen erscheint eine Datenschutzabfrage. Das Geburtsdatum wird erst gespeichert, nachdem das Mitglied mit ✅ **Annehmen** zugestimmt hat.
 
-## Hinweise
+## Wichtige Hinweise
 
-- Informiere Mitglieder darüber, dass sie die Speicherung ausdrücklich bestätigen müssen.
-- Die Löschung über `/birthday-delete` entfernt alle Geburtstagsdaten des Mitglieds.
-- Wähle eine temporäre Rolle, die für den Geburtstagszeitraum gedacht ist.
+- Informiere Mitglieder darüber, dass sie der Speicherung ausdrücklich zustimmen müssen.
+- `/birthday-delete` löscht sämtliche Geburtstagsdaten des Mitglieds.
+- Verwende für die optionale Geburtstagsrolle eine Rolle, die für den temporären Einsatz vorgesehen ist.

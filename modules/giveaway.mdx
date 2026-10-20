@@ -4,27 +4,63 @@ description: "Erstelle zeitlich begrenzte Verlosungen und beende laufende Giveaw
 icon: "gift"
 ---
 
+<Badge color="purple">Community</Badge> <Badge color="green">Slash-Befehle</Badge>
+
 Mit dem Giveaway-System kannst du eine Verlosung mit Laufzeit, Zielkanal, Gewinneranzahl und Preis erstellen.
 
-## Giveaway erstellen
+## Modul einrichten und bearbeiten
 
-Nutze `/giveaway-erstellen` und gib die folgenden Werte an:
+Giveaways werden direkt über Slash-Befehle erstellt und beendet. Ein separates Setup-Menü ist für die hier beschriebenen Befehle nicht erforderlich.
+
+<Tabs>
+  <Tab title="Via Discord-Befehl" icon="discord">
+    <Steps>
+      <Step title="Giveaway-Befehl ausführen">
+        Führe `/giveaway-erstellen` aus und gib Dauer, Kanal, Gewinneranzahl, Preis und Beschreibung an.
+      </Step>
+      <Step title="Angaben prüfen">
+        Kontrolliere die Laufzeit und den Zielkanal. Ohne Angabe eines Kanals wird der aktuelle Kanal verwendet.
+      </Step>
+      <Step title="Giveaway bei Bedarf beenden">
+        Nutze `/giveaway-beende` und wähle das gewünschte Giveaway aus der Liste der laufenden Verlosungen aus.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Im Web-Dashboard" icon="sliders">
+    Eine vorhandene Modulkonfiguration kann im Dashboard angepasst werden. Giveaways erstellst oder beendest du mit den Slash-Befehlen in Discord.
+  </Tab>
+</Tabs>
+
+## Kernfunktionen im Überblick
+
+<CardGroup cols={3}>
+  <Card title="Flexible Laufzeit" icon="clock">
+    Lege Sekunden, Minuten, Stunden oder Tage als Laufzeit fest.
+  </Card>
+  <Card title="Gewinner und Preis" icon="trophy">
+    Bestimme die Zahl der Gewinner und den zu verlosenden Preis.
+  </Card>
+  <Card title="Giveaway beenden" icon="circle-check">
+    Wähle eine laufende Verlosung aus und beende sie über den Befehl.
+  </Card>
+</CardGroup>
+
+## Einstellungen & Parameter
+
+Nutze `/giveaway-erstellen` mit den folgenden Parametern:
 
 | Parameter | Beschreibung | Beispiel |
 | --- | --- | --- |
-| `dauer` | Dauer bis zum Ende der Verlosung. Unterstützte Einheiten: Sekunden, Minuten, Stunden und Tage. | `10m`, `1h`, `1d` |
-| `kanal` | Kanal, in dem das Giveaway veröffentlicht wird. Ohne Angabe wird der aktuelle Kanal verwendet. | `#giveaways` |
+| `dauer` | Dauer bis zum Ende. Unterstützt werden Sekunden, Minuten, Stunden und Tage. | `10m`, `1h`, `1d` |
+| `kanal` | Zielkanal; ohne Angabe wird der aktuelle Kanal verwendet. | `#giveaways` |
 | `gewinneranzahl` | Anzahl der Gewinner. | `1` |
 | `preis` | Zu gewinnender Preis. | `Mitgliedschaft` |
 | `beschreibung` | Ergänzende Informationen zur Verlosung. | `Teilnahmebedingungen beachten` |
 
-Als Laufzeiten sind beispielsweise `1s`, `10m`, `1h`, `12h`, `1d` und `7d` vorgesehen.
+Beispiele für Laufzeiten sind `1s`, `10m`, `1h`, `12h`, `1d` und `7d`.
 
-## Giveaway beenden
+## Wichtige Hinweise
 
-Führe `/giveaway-beende` aus. Wähle in der angezeigten Liste das Giveaway aus, das beendet werden soll.
-
-## Hinweise
-
-- Prüfe vor dem Start die Dauer, den Zielkanal, die Gewinneranzahl und den angegebenen Preis.
-- Wenn du keinen Zielkanal angibst, wird die Verlosung im aktuellen Kanal erstellt.
+- Prüfe vor dem Start die Dauer, den Zielkanal, die Gewinneranzahl und den Preis.
+- Ohne `kanal` wird die Verlosung im aktuellen Kanal erstellt.
+- Zum Beenden musst du das gewünschte Giveaway aus der angezeigten Liste auswählen.
