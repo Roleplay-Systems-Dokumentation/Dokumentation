@@ -1,0 +1,34 @@
+---
+title: "Haussystem"
+description: "Veröffentliche eine Häuserliste und stelle deinem Team ein separates Verwaltungsmenü bereit."
+icon: "home"
+---
+
+Das Haussystem zeigt eine Häuserliste in einem festgelegten Kanal an. Ein separates Verwaltungsmenü und eine Verwaltungsrolle steuern, wer die Liste bearbeiten darf.
+
+## Einrichtung
+
+Führe `/haus_setup` aus und konfiguriere im Menü:
+
+1. **Listenkanal:** Kanal, in dem die Häuserliste erscheint.
+2. **Verwaltungskanal:** Kanal, in dem das Verwaltungsmenü veröffentlicht wird.
+3. **Verwaltungsrolle:** Rolle, die das Menü verwalten darf.
+4. **Liste:** Wähle eine Vorlage oder eine eigene Bild-URL aus.
+5. **Häuser & Namen:** Lege die Anzahl der Häuser, Standardnamen und bei Bedarf eigene Namen fest.
+6. **Karte festlegen:** Passe die URL des Kartenbilds an.
+
+<Note>
+  Richte das Modul über `/haus_setup` in Discord ein. Im Dashboard kannst du eine vorhandene Konfiguration anpassen, aber kein Modul neu aktivieren.
+</Note>
+
+## Hinweis zu Bild-URLs
+
+<Warning>
+  Discord-CDN- und Nachrichten-Bild-URLs können ablaufen oder später nicht mehr angezeigt werden. Verwende nach Möglichkeit einen Dienst mit permanentem Direktlink. Wenn du keinen Direktlink erstellen kannst oder möchtest, wende dich an den Supportserver.
+</Warning>
+
+## Hinweise
+
+- Verwende getrennte Kanäle für die veröffentlichte Liste und das Verwaltungspanel.
+- Prüfe die Bild-URL der Karte nach dem Einrichten, damit die Liste das gewünschte Bild anzeigt.
+- Vergib die Verwaltungsrolle nur an Teammitglieder, die die Liste pflegen sollen.

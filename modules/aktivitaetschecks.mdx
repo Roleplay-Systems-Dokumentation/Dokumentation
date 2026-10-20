@@ -1,0 +1,51 @@
+---
+title: "Aktivitätschecks"
+description: "Prüfe die Aktivität einer Zielrolle mit zeitlich begrenzten Rückmeldungen per Button oder Emoji."
+icon: "user-check"
+---
+
+Mit Aktivitätschecks fragst du eine bestimmte Rolle innerhalb eines festgelegten Zeitraums ab. Mitglieder bestätigen ihre Aktivität über Buttons oder Emoji-Reaktionen.
+
+## Einrichtung
+
+Richte das Modul mit `/aktivitaet_setup` ein. Lege dabei fest:
+
+- `admin_role`: Rolle, die Aktivitätschecks verwalten darf.
+- `buttons`: `True` für Rückmeldungen per Button; andernfalls werden Emoji-Reaktionen verwendet.
+- `menu`: `True`, um ein separates Verwaltungsmenü erstellen und senden zu können.
+
+Beispiel:
+
+```text
+/aktivitaet_setup admin_role:@Team buttons:True menu:True
+```
+
+<Note>
+  Ersetze `@Team` durch die Rolle, die den Check verwalten darf. Vergib diese Berechtigung nur an vertrauenswürdige Teammitglieder. Aktiviere und richte das Modul über den Slash-Befehl in Discord ein. Im Dashboard kannst du eine vorhandene Konfiguration anpassen, aber kein Modul neu aktivieren.
+</Note>
+
+## Check erstellen und verwalten
+
+Starte einen Check mit `/aktivitaet_create` und fülle die Parameter aus:
+
+| Parameter | Beschreibung |
+| --- | --- |
+| `channel` | Kanal, in dem die Abfrage erscheint. |
+| `ziel` | Rolle, deren Aktivität geprüft wird. |
+| `ueberschrift` | Überschrift der Abfrage. |
+| `text` | Erklärung oder Anweisung für die Mitglieder. |
+| `stunden` | Laufzeit in Stunden, zum Beispiel `0.5` für 30 Minuten oder `1` für eine Stunde. |
+
+Mit `/aktivitaet_cancel` brichst du einen laufenden Check ohne Auswertung ab.
+
+Beispiel:
+
+```text
+/aktivitaet_create channel:#Allgemein ziel:@everyone ueberschrift:Test text:Test stunden:0.5
+```
+
+## Hinweise
+
+- Stelle sicher, dass die verwaltende Rolle nur an vertrauenswürdige Teammitglieder vergeben ist.
+- Prüfe vor dem Start die Zielrolle, den Kanal und die Laufzeit.
+- Ein abgebrochener Check wird nicht ausgewertet.

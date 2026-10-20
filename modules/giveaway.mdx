@@ -1,0 +1,30 @@
+---
+title: "Giveaways"
+description: "Erstelle zeitlich begrenzte Verlosungen und beende laufende Giveaways."
+icon: "gift"
+---
+
+Mit dem Giveaway-System kannst du eine Verlosung mit Laufzeit, Zielkanal, Gewinneranzahl und Preis erstellen.
+
+## Giveaway erstellen
+
+Nutze `/giveaway-erstellen` und gib die folgenden Werte an:
+
+| Parameter | Beschreibung | Beispiel |
+| --- | --- | --- |
+| `dauer` | Dauer bis zum Ende der Verlosung. Unterstützte Einheiten: Sekunden, Minuten, Stunden und Tage. | `10m`, `1h`, `1d` |
+| `kanal` | Kanal, in dem das Giveaway veröffentlicht wird. Ohne Angabe wird der aktuelle Kanal verwendet. | `#giveaways` |
+| `gewinneranzahl` | Anzahl der Gewinner. | `1` |
+| `preis` | Zu gewinnender Preis. | `Mitgliedschaft` |
+| `beschreibung` | Ergänzende Informationen zur Verlosung. | `Teilnahmebedingungen beachten` |
+
+Als Laufzeiten sind beispielsweise `1s`, `10m`, `1h`, `12h`, `1d` und `7d` vorgesehen.
+
+## Giveaway beenden
+
+Führe `/giveaway-beende` aus. Wähle in der angezeigten Liste das Giveaway aus, das beendet werden soll.
+
+## Hinweise
+
+- Prüfe vor dem Start die Dauer, den Zielkanal, die Gewinneranzahl und den angegebenen Preis.
+- Wenn du keinen Zielkanal angibst, wird die Verlosung im aktuellen Kanal erstellt.

@@ -1,0 +1,34 @@
+---
+title: "Anti-Bot-System"
+description: "Überwache einen ausgewählten Kanal und lege fest, wie das System auf verdächtige Aktivitäten reagiert."
+icon: "shield-check"
+---
+
+Das Anti-Bot-System (Honeypot) überwacht einen von dir ausgewählten Kanal. Du legst fest, in welchem Kanal Protokolle erscheinen, welche Maßnahme bei einem Verstoß erfolgt und welche Rollen von der Überwachung ausgenommen sind.
+
+## Einrichtung
+
+Führe `/anti-bot-setup` aus und konfiguriere das Modul im Menü:
+
+| Einstellung | Beschreibung |
+| --- | --- |
+| Überwachungs-Kanal | Kanal, den das System auf verdächtige Aktivitäten überwacht. |
+| Log-Kanal | Kanal für Meldungen des Systems. |
+| Bestrafung | Wähle Timeout für 10 Minuten, Kick oder Ban. |
+| Whitelist-Rollen | Rollen, deren Mitglieder von der Moderation ausgenommen sind. |
+
+Unter **Erweitert** findest du zusätzliche Ausnahmen und Schwellenwerte:
+
+- **Admins ignorieren:** Wenn aktiviert, werden Mitglieder mit Administratorrechten nicht verwaltet.
+- **Bots ignorieren:** Wenn aktiviert, werden alle Bots ignoriert. Wenn deaktiviert, werden Bots außerhalb der Whitelist moderiert.
+- **Verdächtige Accounts ab:** Wähle einen Schwellenwert von 1, 3, 7, 14, 30, 60 oder 90 Tagen. Accounts unterhalb des gewählten Alters werden besonders beachtet und bei Verstößen zusätzlich gemeldet.
+
+<Note>
+  Richte das Modul über `/anti-bot-setup` in Discord ein. Im Dashboard kannst du eine vorhandene Konfiguration anpassen, aber kein Modul neu aktivieren.
+</Note>
+
+## Hinweise
+
+- Wähle einen Log-Kanal, den die zuständigen Moderatoren einsehen können.
+- Prüfe die Whitelist und die Einstellungen unter **Erweitert**, bevor du die Überwachung verwendest.
+- Die gewählte Bestrafung gilt für erkannte Verstöße. Stelle sicher, dass der Bot die erforderlichen Berechtigungen im Server hat.

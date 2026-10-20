@@ -1,85 +1,47 @@
 ---
 title: "Personensystem"
-description: "Personeneinträge, Roblox-Infos und In-Game-Rechteanfragen direkt über Discord verwalten."
+description: "Verwalte Team-Personeneinträge und Roblox-Informationen über ein Discord-Menü."
+icon: "users"
 ---
 
-Mit dem Personensystem verwaltest du Discord-User und ihre Roblox-Daten direkt im Server. Team und Verwaltung können Einträge pflegen, Roblox-Profile nachschlagen und auf Wunsch ein Rechteanfrage-System nutzen. So laufen Identifikation und Freigaben zentral an einer Stelle.
+Das Personensystem ist ein Nutzerverzeichnis für Adminteams. Teammitglieder können eigene Einträge anlegen und Einträge einsehen. Eine Verwaltungsrolle darf Einträge bearbeiten und löschen. Optional kannst du Rechteanfragen einrichten.
 
-## Modul aktivieren
+## Einrichtung
 
-<Tabs>
-  <Tab title="Discord">
-    <Steps>
-      <Step title="Setup-Befehl ausführen">
-        Führe auf deinem Server den Befehl `!personen_setup` aus.
-      </Step>
-      <Step title="Rollen festlegen">
-        Setze im Setup die Team-Rolle und die Verwaltungsrolle. Die Verwaltungsrolle darf Einträge verwalten, die Team-Rolle darf das Verzeichnis einsehen.
-      </Step>
-      <Step title="Kanäle konfigurieren">
-        Lege den Hauptmenü-Kanal fest. Optional kannst du zusätzlich Anfrage-Kanal und Anfrage-Menü-Kanal für Rechteanfragen konfigurieren.
-      </Step>
-      <Step title="Setup abschließen">
-        Klicke im Setup auf "Setup abschließen". Der Bot sendet dann das Personenmenü in den konfigurierten Kanal.
-      </Step>
-    </Steps>
-  </Tab>
-</Tabs>
+Führe `/personen_setup` aus. Über die Buttons im Setup legst du Folgendes fest:
 
-## Personenmenü
-
-Das Kernstück ist ein interaktives Discord-Menü mit Buttons für alle wichtigen Aktionen:
-
-- Eintragen/Bearbeiten: Nutzer pflegen ihren eigenen Roblox-Eintrag.
-- Mein Eintrag: Zeigt den eigenen gespeicherten Datensatz.
-- Alle Einträge: Zeigt das gesamte Verzeichnis für berechtigte Rollen.
-- Roblox-Spieler Informationen: Öffnet eine Roblox-Profilabfrage per Modal.
-- Verwaltung: Admin-Funktionen zum Bearbeiten oder Löschen fremder Einträge.
+| Einstellung | Beschreibung |
+| --- | --- |
+| Team-Rolle | Darf Einträge einsehen und eigene Einträge hinzufügen. |
+| Verwaltungsrolle | Darf Einträge einsehen, bearbeiten und löschen. |
+| Hauptmenü-Kanal | Kanal für das Personenmenü. |
+| Anfragen-Kanal | Kanal für Rechteanfragen. |
+| Anfragen-Menü-Kanal | Kanal für das Menü, über das Rechte angefragt werden. |
+| Log-Kanal (optional) | Protokolliert Rechteanfragen sowie neue, geänderte oder gelöschte Einträge. |
+| Vordefinierte Rechte | Legt die verfügbaren Rechte-Gruppen für Rechteanfragen fest. |
+| Anfragensystem | Schaltet das Rechteanfragensystem ein oder aus. |
 
 <Note>
-  Das Personenmenü arbeitet vollständig über Discord-Interaktionen (Buttons, Selects und Modals). Stelle sicher, dass der Bot in den konfigurierten Kanälen Nachrichten und Interaktionen senden darf.
+  Richte das Modul über `/personen_setup` in Discord ein. Im Dashboard kannst du eine vorhandene Konfiguration anpassen, aber kein Modul neu aktivieren.
 </Note>
 
-## Anwendungsfälle
+## Funktionen des Personenmenüs
 
-<CardGroup cols={2}>
-  <Card title="Einheitliche Spielerverwaltung" icon="users">
-    Roblox-Nutzername und Anzeigename werden pro Discord-User sauber hinterlegt und zentral abrufbar gemacht.
-  </Card>
+- **Eintragen/Bearbeiten:** Bearbeite deinen eigenen Eintrag.
+- **Mein Eintrag:** Zeige deinen gespeicherten Eintrag an.
+- **Alle Einträge:** Sieh die verfügbaren Einträge ein.
+- **Person suchen:** Suche im System nach passenden Nutzern.
+- **Fehlende Einträge:** Ermittle, welche Mitglieder mit Team-Rolle noch keinen Eintrag haben.
+- **Roblox-Spielerinformationen:** Frage Informationen zu einem gültigen Roblox-Nutzernamen über die API ab.
+- **Verwaltung:** Wähle einen Nutzer aus und bearbeite oder lösche dessen Eintrag.
+- **Nicht-Teameinträge löschen:** Lösche nach Bestätigung Einträge von Nutzern, die nicht mehr auf dem Server sind.
 
-  <Card title="Schnelle Roblox-Profile" icon="search">
-    Teammitglieder können Roblox-Profile direkt im Discord-Menü abrufen, inklusive User-ID, Verifizierungsstatus und Thumbnail.
-  </Card>
+## Rechteanfragen
 
-  <Card title="Strukturierte Rechteanfragen" icon="shield">
-    In-Game-Rechteanfragen werden in einen Prüfkanal gesendet und können dort per Buttons angenommen oder abgelehnt werden.
-  </Card>
-</CardGroup>
+Wenn du das Anfragensystem aktivierst, kannst du vordefinierte Rechte-Gruppen für Anfragen bereitstellen. Lege dafür die Anfrage-Kanäle und die gewünschten Rechte im Setup fest.
 
-## Berechtigungen
+## Hinweise
 
-Die Zugriffskontrolle läuft über Administratorrechte und die im Setup gesetzten Rollen:
-
-- Administratoren können das Setup ausführen und ändern.
-- Verwaltungsrolle darf Einträge verwalten.
-- Teamrolle und Verwaltungsrolle dürfen alle Einträge ansehen.
-- Rechteanfragen dürfen nur von der Verwaltung angenommen oder abgelehnt werden.
-
-<Warning>
-  Das Verzeichnis enthält personenbezogene Zuordnungen zwischen Discord- und Roblox-Konten. Gib Einsichts- und Verwaltungsrechte nur an Rollen, die diese Daten wirklich benötigen.
-</Warning>
-
-## Rechteanfragen (optional)
-
-Wenn du das Anfragesystem aktivierst, können eingetragene Nutzer In-Game-Rechte über ein separates Menü anfragen. Die Anfrage landet als Embed im Anfrage-Kanal und kann dort direkt bearbeitet werden:
-
-- Annehmen: Anfrage wird als genehmigt markiert.
-- Ablehnen: Grund wird abgefragt und in der Anfrage gespeichert.
-
-Der Antragsteller erhält in beiden Fällen eine DM mit dem Ergebnis.
-
-## Tipps
-
-<Tip>
-  Nutze einen separaten Team-Kanal für das Personenmenü und einen eigenen Moderationskanal für Rechteanfragen. So bleiben öffentliche Chats sauber und Entscheidungen nachvollziehbar.
-</Tip>
+- Vergib die Verwaltungsrolle nur an Teammitglieder, die fremde Einträge bearbeiten oder löschen sollen.
+- Die Anfragen-Kanäle und der Log-Kanal sind nur erforderlich, wenn du das Rechteanfragensystem beziehungsweise die Protokollierung verwenden möchtest.
+- Prüfe die Auswahl, bevor du Einträge für Nicht-Teammitglieder löschen lässt.

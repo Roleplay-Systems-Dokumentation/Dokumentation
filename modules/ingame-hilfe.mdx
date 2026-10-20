@@ -1,0 +1,35 @@
+---
+title: "Ingame-Hilfe"
+description: "Nimm Hilfeanfragen über ein Discord-Panel entgegen und informiere dein Team."
+icon: "lifebuoy"
+---
+
+Das Ingame-Hilfe-System sendet einen Alarm, wenn ein Mitglied über den vorgesehenen Button Hilfe anfordert. Du legst fest, wo Anfragen und das Panel erscheinen und welche Rollen es verwenden dürfen.
+
+## Einrichtung
+
+Führe `/hilfe_setup` aus und konfiguriere die Einstellungen im Menü:
+
+| Einstellung | Zweck |
+| --- | --- |
+| Kanal für Hilfeanfragen | Kanal, in dem eingehende Hilfeanfragen erscheinen. |
+| Kanal für den Button | Kanal, in dem der **Hilfe anfordern**-Button veröffentlicht wird. |
+| Nutzungsrollen | Rollen, deren Mitglieder den Button verwenden dürfen. |
+| Team-Rolle | Rolle, die bei jeder Anfrage benachrichtigt wird. |
+
+Über die Buttons im Setup kannst du außerdem Folgendes bearbeiten:
+
+- **Panel-Text:** Passe den Text des Hilfe-Anfordern-Embeds an.
+- **Hilfe-Nachricht:** Bearbeite die Nachricht, die bei einer Anfrage gesendet wird.
+- **Emojis:** Ändere die Standardreaktionen des Bots auf die Hilfe-Nachricht.
+- **Cooldown:** Wähle keinen Cooldown oder 2, 5, 10, 15, 30 oder 60 Minuten.
+
+<Note>
+  Richte das Modul über `/hilfe_setup` in Discord ein. Im Dashboard kannst du eine vorhandene Konfiguration anpassen, aber kein Modul neu aktivieren.
+</Note>
+
+## Hinweise
+
+- Gib den Zugriff auf den Hilfe-Button nur den vorgesehenen Rollen.
+- Stelle sicher, dass die Team-Rolle im Server existiert und bei Anfragen erwähnt werden darf.
+- Wähle einen Cooldown passend zum erwarteten Anfrageaufkommen.

@@ -1,62 +1,37 @@
 ---
-title: "Fahrzeuge"
-description: "Kennzeichen- und Fahrzeugverwaltung direkt aus Discord mit schneller Suche."
+title: "Fahrzeugverwaltung"
+description: "Verwalte Fahrzeugtypen und Kennzeichen in einem zentralen Discord-Menü für dein Team."
+icon: "car"
 ---
 
-Das Fahrzeug-Automenü ermöglicht deinem Team, Fahrzeuge und Kennzeichen blitzschnell direkt über Discord nachzuschlagen. Anstatt in externen Listen oder Tabellen zu suchen, ruft der Bot die Fahrzeugdaten auf Anfrage ab und stellt sie übersichtlich dar. Das spart Zeit im laufenden Spielbetrieb.
+Mit dem Auto-Menü führst du eine Kennzeichen- und Fahrzeugdatenbank für dein Adminteam. Teammitglieder können eigene Fahrzeuge eintragen und Einträge einsehen. Die Verwaltungsrolle kann zusätzlich Einträge ändern oder löschen.
 
-## Modul aktivieren
+## Einrichtung
 
-<Tabs>
-  <Tab title="Discord">
-    <Steps>
-      <Step title="Setup-Befehl ausführen">
-        Führe auf deinem Server den Befehl `!auto_setup` aus.
-      </Step>
-      <Step title="Präfix setzen">
-        Wähle ein Präfix für die Kennzeichen aus. Dieses gilt für alle Einträge.
-      </Step>
-      <Step title="Team-Rolle und Verwaltungsrolle wäheln">
-        Wähle die Team-Rolle (eintragen eines neuen Kennzeichens) und die Verwaltungsrolle (verwalten der aktiven Kennzeichen) aus.
-      </Step>
-    </Steps>
-  </Tab>
-</Tabs>
+Führe `/auto-setup` aus und richte das Menü ein:
 
-## Fahrzeug-Automenü
-
-Das Kernstück des Moduls ist das interaktive Automenü. Mit einem Befehl öffnet der Bot ein Discord-Menü, über das Teammitglieder Kennzeichen oder Fahrzeugdaten eingeben und sofort Ergebnisse erhalten.
+1. Lege ein Kennzeichenpräfix fest. Es entspricht dem Ortskürzel eines deutschen Kennzeichens; die übrigen Zeichen wählen Nutzer beim Eintragen.
+2. Wähle die **Team-Rolle**. Mitglieder dieser Rolle dürfen alle Fahrzeuge sehen und eigene Einträge hinzufügen.
+3. Wähle die **Verwaltungsrolle**. Sie erhält die Team-Berechtigungen und darf Einträge verwalten und löschen.
+4. Wähle vordefinierte Fahrzeugtypen aus einem Spiel oder lege eigene Typen fest. Du kannst bis zu 10 eigene Fahrzeugtypen definieren.
+5. Lege den Kanal fest, in dem das Menü veröffentlicht wird.
+6. Lege bei Bedarf einen Log-Kanal für Einträge, Änderungen, Korrekturen und Löschungen fest.
+7. Schließe das Setup ab.
 
 <Note>
-  Das Automenü funktioniert mit Discord-Interaktionen (Buttons und Modals). Stelle sicher, dass der Bot die nötigen Berechtigungen hat, um Interaktionen in dem konfigurierten Kanal zu senden.
+  Richte das Modul über `/auto-setup` in Discord ein. Im Dashboard kannst du eine vorhandene Konfiguration anpassen, aber kein Modul neu aktivieren.
 </Note>
 
-## Anwendungsfälle
+## Funktionen des Menüs
 
-<CardGroup cols={2}>
-  <Card title="Kennzeichenabfrage" icon="search">
-    Ein Teammitglied gibt ein Kennzeichen ein und erhält sofort die hinterlegten Fahrzeugdaten – Modell, Farbe, Eigentümer und Status.
-  </Card>
+- **Auto eintragen:** Lege ein Fahrzeug mit einem Kennzeichen an.
+- **Meine Autos:** Zeige deine eigenen Fahrzeuge an.
+- **Alle Autos:** Zeige alle gespeicherten Fahrzeuge an.
+- **Verwaltung:** Wähle einen Nutzer und anschließend ein Fahrzeug, um das Kennzeichen zu ändern oder den Eintrag zu löschen.
+- **Nicht-Teameinträge löschen:** Suche Einträge von Nutzern ohne Team-Rolle und lösche sie nach einer Bestätigung.
 
-  <Card title="Schnelle Teamsuche" icon="zap">
-    Keine externen Tools mehr nötig – alle Infos kommen direkt in Discord, ohne den Spielfluss zu unterbrechen.
-  </Card>
+## Hinweise
 
-  <Card title="Berechtigungssteuerung" icon="shield">
-    Nur autorisierte Rollen können Fahrzeugabfragen starten. Unbefugter Zugriff wird automatisch abgelehnt.
-  </Card>
-</CardGroup>
-
-## Berechtigungen
-
-Du steuerst im Dashboard, welche Rollen das Fahrzeug-Automenü nutzen dürfen. So stellst du sicher, dass Fahrzeugdaten nur für die zuständigen Teammitglieder einsehbar sind.
-
-<Warning>
-  Fahrzeugdaten können sensible Informationen enthalten. Schränke den Zugriff auf die Rollen ein, die diese Daten für ihre Aufgaben tatsächlich benötigen.
-</Warning>
-
-## Tipps
-
-<Tip>
-  Richte einen separaten, nur für das Team sichtbaren Kanal für Fahrzeuganfragen ein. So bleiben öffentliche Kanäle übersichtlich.
-</Tip>
+- Vergib die Verwaltungsrolle nur an Personen, die Fahrzeugdaten ändern oder löschen sollen.
+- Ein Log-Kanal ist optional, hilft aber dabei, Änderungen und Löschungen nachzuvollziehen.
+- Prüfe vor dem Löschen von Nicht-Teameinträgen die angezeigte Auswahl und bestätige erst danach.
