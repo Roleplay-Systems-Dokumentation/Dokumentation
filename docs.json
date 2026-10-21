@@ -22,16 +22,9 @@
                 "group": "Bot-Module",
                 "pages": [
                   "uebersicht",
-                  "modules/aktivitaetschecks",
-                  "modules/anti-bot",
-                  "modules/geburtstag",
-                  "modules/giveaway",
-                  "modules/haussystem",
-                  "modules/ingame-hilfe",
                   "title-roleplay-management-description-verwalte-den-rp-status-deines-servers-mit-automatisierten-ankuendigungen-steuer-panels-und-dm-benachrichtigungen-icon-gamepad-group-badge-text-roleplay-modul",
-                  "modules/serverstatus",
-                  "modules/tickets",
-                  "verifikation"
+                  "verifikation",
+                  "untitled-page"
                 ]
               }
             ]
