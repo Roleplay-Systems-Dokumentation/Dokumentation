@@ -51,14 +51,16 @@
               "dashboard",
               "dashboard/server-verwaltung",
               "dashboard/nutzereinstellungen",
-              "dashboard/statistiken"
+              "dashboard/statistiken",
+              "untitled-page-2"
             ]
           },
           {
             "group": "Team Dashboard",
             "pages": [
               "team-dashboard/uebersicht"
-            ]
+            ],
+            "hidden": true
           },
           {
             "group": "Discord-Server & Community",

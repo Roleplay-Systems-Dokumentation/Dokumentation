@@ -1,0 +1,168 @@
+---
+title: "Public API"
+description: "Serverbezogener, schreibgeschützter Datenabruf für externe Anwendungen."
+---
+
+Die Public API ermöglicht externen Anwendungen den **schreibgeschützten Abruf ausgewählter Daten eines Discord-Servers**. Jede Anfrage muss mit einem für diesen Server erstellten API-Key autorisiert werden.
+
+Die API gibt keine globale Liste aller Server aus. Daten werden immer für eine konkrete `guild_id` und einen unterstützten Datentyp angefragt. Die Plattform-Umfrage ist nicht Teil der API.
+
+## Voraussetzungen
+
+- Die API muss in der Serververwaltung für den betreffenden Discord-Server aktiviert sein.
+- Für den Server muss mindestens ein aktiver API-Key existieren.
+- Der API-Key muss für genau diesen Server gültig sein.
+
+Die API lässt sich im Dashboard unter **Server → API-Management** aktivieren. Dort kann ein API-Key erstellt, dessen Anfragelimit angepasst und der Key bei Bedarf gelöscht werden. Der vollständige API-Key wird nur bei seiner Erstellung angezeigt. Speichere ihn deshalb direkt an einem sicheren Ort.
+
+## Basis-URL
+
+Alle Anfragen verwenden diesen Endpunkt:
+
+```text
+https://systems.nrw-roleplay.de/API/public_api.php
+```
+
+Jede Datenabfrage benötigt die Parameter `guild_id` und `type`.
+
+| Parameter | Erforderlich | Beschreibung |
+| :-- | :-: | :-- |
+| `guild_id` | Ja | Discord-Server-ID. Es werden numerische IDs mit 17 bis 21 Stellen akzeptiert. |
+| `type` | Ja | Unterstützter Datentyp, zum Beispiel `activity_data`. |
+| `key` | Nein\* | API-Key als URL-Parameter. Nur verwenden, wenn ein HTTP-Header nicht möglich ist. |
+
+\* Alternativ zum Parameter `key` kann der Key im HTTP-Header `X-API-KEY` oder als Bearer-Token übergeben werden. Der `X-API-KEY`-Header hat Vorrang, wenn er gesetzt ist.
+
+## Authentifizierung
+
+### Empfohlen: HTTP-Header
+
+Übergib den API-Key bei jeder Anfrage im Header `X-API-KEY`:
+
+```http
+X-API-KEY: DEIN_API_KEY
+```
+
+Beispiel mit `curl`:
+
+```bash
+curl \
+  -H "X-API-KEY: DEIN_API_KEY" \
+  "https://systems.nrw-roleplay.de/API/public_api.php?guild_id=123456789012345678&type=activity_data"
+```
+
+Alternativ wird ein Bearer-Token im `Authorization`-Header unterstützt:
+
+```http
+Authorization: Bearer DEIN_API_KEY
+```
+
+### Alternative: URL-Parameter
+
+Wenn die Anwendung keine benutzerdefinierten HTTP-Header senden kann, kann der Key über `key` übergeben werden:
+
+```text
+https://systems.nrw-roleplay.de/API/public_api.php?key=DEIN_API_KEY&guild_id=123456789012345678&type=activity_data
+```
+
+<Note>
+  Bevorzuge den HTTP-Header. API-Keys in URLs können im Browser-Verlauf, in Proxy- oder Server-Logs und in Analysewerkzeugen gespeichert werden. Teile eine URL mit `key` niemals öffentlich.
+</Note>
+
+## Unterstützte Datentypen
+
+Die folgenden Typen können mit `type` abgefragt werden. Jeder Typ benötigt zusätzlich die `guild_id` des Servers.
+
+| Typ | Beschreibung |
+| :-- | :-- |
+| `activity_config` | Konfiguration des Aktivitätschecks. |
+| `activity_data` | Gespeicherte Aktivitätschecks und deren Rückmeldungen. |
+| `autos` | Daten des Automenüs. |
+| `config` | Allgemeine Serverkonfiguration. |
+| `gebaeude` | Gebäudekonfiguration. |
+| `gebaeude_data` | Gespeicherte Gebäudedaten. |
+| `helps` | Konfiguration des In-Game-Hilfe-Moduls. |
+| `personensystem` | Konfiguration des Personenverzeichnisses. |
+| `personensystem_data` | Gespeicherte Einträge des Personenverzeichnisses. |
+| `punishments` | Bestrafungsdaten des Servers. |
+| `roleplaystates` | Roleplay-Statusdaten. |
+| `shift_configs` | Konfiguration des Schicht-Systems. |
+| `shift_histories` | Schichtverläufe. |
+| `shifts` | Gespeicherte Schichtdaten. |
+| `stats` | Serverstatistiken, sofern für den Server gespeichert. |
+| `teams` | Teamlisten-Daten. |
+| `ticket_config` | Konfiguration des Ticket-Systems. |
+| `tickets` | Gespeicherte Ticketdaten. |
+| `unban` | Konfiguration der Entbannungsfunktion. |
+| `verify` | Konfiguration des Verify-Moduls. |
+| `welcomers` | Konfiguration des Welcomer-Moduls. |
+
+Die API liefert nur Daten zurück, die für den angefragten Typ und Server gespeichert sind. Ist für einen Typ keine Datei vorhanden, antwortet die API mit `404 Not Found`.
+
+## Antwortformat
+
+Erfolgreiche Antworten verwenden UTF-8-kodiertes JSON. Die Server-ID und IDs in den zurückgegebenen Daten werden, soweit erkannt, als Strings ausgegeben, damit große Discord-IDs nicht durch Zahlenrundung verändert werden.
+
+```json
+{
+  "guild_id": "123456789012345678",
+  "type": "activity_data",
+  "data": {
+    "checks": [],
+    "archive": []
+  }
+}
+```
+
+Die Felder innerhalb von `data` hängen vom angefragten Datentyp ab. Die Antwort enthält `Cache-Control: no-store`, damit Clients die Serverdaten nicht aus einem HTTP-Cache beziehen.
+
+## HTTP-Methoden
+
+Die API unterstützt ausschließlich `GET` für Datenabfragen. Änderungen an Serverdaten sind über diesen Endpunkt nicht möglich.
+
+| Anfrage | Verhalten |
+| :-- | :-- |
+| `GET` | Authentifiziert den Key und ruft den angefragten Datentyp ab. |
+| `OPTIONS` | Beantwortet CORS-Preflight-Anfragen mit `204 No Content`. |
+| Andere Methoden | Werden mit `405 Method Not Allowed` abgelehnt. |
+
+## Rate-Limit
+
+Jeder API-Key besitzt ein eigenes Anfragelimit pro Minute. Das Limit wird beim Erstellen des Keys festgelegt und kann in der Serververwaltung angepasst werden. Zulässig sind Werte von **1 bis 10.000 Anfragen pro Minute**; falls für einen Key kein gültiger Wert gesetzt ist, gilt der Standardwert von **120**.
+
+Wird das Limit überschritten, antwortet die API mit `429 Too Many Requests` und einem `Retry-After`-Header. Dieser gibt an, wie viele Sekunden bis zum nächsten Anfragefenster gewartet werden muss.
+
+```http
+HTTP/1.1 429 Too Many Requests
+Retry-After: 24
+Content-Type: application/json; charset=utf-8
+```
+
+Die API liefert derzeit keine `X-RateLimit-Limit`- oder `X-RateLimit-Remaining`-Header.
+
+## Fehlerbehandlung
+
+Fehlerantworten enthalten JSON mit einer Beschreibung im Feld `error`.
+
+| HTTP-Status | Bedeutung |
+| :-- | :-- |
+| `400 Bad Request` | `guild_id` fehlt oder ist ungültig, oder `type` wird nicht unterstützt. Bei einem ungültigen `type` enthält die Antwort außerdem `available_types`. |
+| `401 Unauthorized` | API-Key fehlt, hat ein ungültiges Format oder ist für diesen Server nicht aktiv. |
+| `403 Forbidden` | Die API ist für den angefragten Server nicht aktiviert. |
+| `404 Not Found` | Für diesen Server sind zum angefragten Typ keine Daten vorhanden. |
+| `405 Method Not Allowed` | Die Anfrage verwendet eine andere Methode als `GET` oder `OPTIONS`. |
+| `429 Too Many Requests` | Das Anfragelimit des API-Keys wurde überschritten. Beachte `Retry-After`. |
+| `500 Internal Server Error` | Die gespeicherte Konfiguration oder die serverseitige Rate-Limit-Verarbeitung ist fehlerhaft. |
+
+## Sicherheitshinweise
+
+- Behandle API-Keys wie Passwörter und teile sie nicht öffentlich.
+- Speichere API-Keys nicht in öffentlich zugänglichem Frontend-Code oder clientseitigen Anwendungen.
+- Lösche nicht mehr benötigte Keys direkt in der Serververwaltung.
+- Aktiviere nur die API und Datentypen, die dein Projekt tatsächlich benötigt.
+- Prüfe, ob dein Projekt personenbezogene oder anderweitig sensible Daten aus den abgefragten Servermodulen verarbeitet.
+- API-Keys sind serverbezogen: Ein für einen Server ausgestellter Key autorisiert keine Abfragen für andere Server.
+
+## Nicht verfügbare Funktionen
+
+Diese API stellt keine globalen Endpunkte für `sys_status`, `list_guilds`, globale Blacklists, Ankündigungen oder die Plattform-Umfrage bereit. Es können ausschließlich die oben aufgeführten Typen zusammen mit einer gültigen `guild_id` abgefragt werden.
