@@ -1,0 +1,65 @@
+---
+title: "Welcomer"
+description: "Gestalte Willkommens- und Abschiedsnachrichten für deinen Discord-Server."
+icon: "message-circle"
+---
+
+<Badge color="purple">Community</Badge> <Badge color="green">Nachrichten & Banner</Badge>
+
+Der Welcomer sendet Nachrichten, wenn Mitglieder deinem Server beitreten oder ihn verlassen. Du kannst für beide Ereignisse eigene Kanäle sowie Texte und Banner festlegen.
+
+## Modul einrichten und bearbeiten
+
+Starte die Einrichtung mit `/welcomer_setup` in Discord. Der Befehl sendet ein Setup-Menü in den Kanal. Dort wählst du die Kanäle für Willkommens- und Abschiedsnachrichten aus und passt die jeweiligen Texte und Banner über die Buttons an. Eine bestehende Konfiguration kannst du auch im Dashboard anpassen; dort kannst du das Modul nicht neu aktivieren.
+
+<Tabs>
+  <Tab title="Via Discord-Befehl" icon="discord">
+    <Steps>
+      <Step title="Setup-Befehl ausführen">
+        Führe `/welcomer_setup` auf deinem Server aus. Der Bot sendet das Setup-Menü in den Kanal.
+      </Step>
+      <Step title="Nachrichtenkanäle auswählen">
+        Wähle den Welcomer-Kanal und den Leave-Kanal aus. Du kannst für beide Ereignisse denselben Kanal verwenden.
+      </Step>
+      <Step title="Texte und Banner anpassen">
+        Nutze **Welcomer Text/Banner** für Willkommensnachrichten und **Leave Text/Banner** für Abschiedsnachrichten.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Im Web-Dashboard" icon="sliders">
+    Passe eine vorhandene Konfiguration unter **Weitere Module → Welcomer** an und prüfe deine Änderungen vor dem Speichern in der Vorschau. Das Dashboard aktiviert kein neues Modul.
+  </Tab>
+</Tabs>
+
+## Kernfunktionen im Überblick
+
+<CardGroup cols={3}>
+  <Card title="Willkommensnachrichten" icon="user-plus">
+    Begrüße neue Mitglieder automatisch im festgelegten Kanal.
+  </Card>
+
+  <Card title="Abschiedsnachrichten" icon="user-minus">
+    Informiere den Server, wenn ein Mitglied ihn verlässt oder gekickt wird.
+  </Card>
+
+  <Card title="Texte und Banner" icon="image">
+    Passe die Inhalte für Willkommens- und Abschiedsnachrichten getrennt an.
+  </Card>
+</CardGroup>
+
+## Verfügbare Variablen
+
+Personalisiere deine Texte mit diesen Variablen:
+
+| Variable | Verwendung |
+| --- | --- |
+| `{user}` | Erwähnt den Nutzer per Ping. |
+| `{username}` | Zeigt nur den Namen des Nutzers an. |
+| `{server}` | Zeigt den Namen des Servers an. |
+| `{membercount}` | Zeigt die aktuelle Mitgliederzahl an. |
+
+## Wichtige Hinweise
+
+- Der Bot benötigt Schreibrechte in den konfigurierten Kanälen.
+- Prüfe die Vorschau, damit Variablen und Formatierung wie erwartet angezeigt werden.
+- Eine Willkommens- und eine Abschiedsnachricht können in unterschiedlichen Kanälen erscheinen.
