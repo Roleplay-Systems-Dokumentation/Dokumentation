@@ -1,67 +1,78 @@
 ---
-title: "Welcomer"
-description: "Gestalte Willkommens- und Abschiedsnachrichten für deinen Discord-Server."
-icon: "message-circle"
+title: "Aktivitätschecks"
+description: "Prüfe die Aktivität einer Zielrolle mit zeitlich begrenzten Rückmeldungen per Button oder Emoji."
+icon: "user-check"
 ---
 
-<Badge color="purple">Community</Badge> <Badge color="green">Nachrichten-Vorlagen</Badge>
+<Badge color="purple">Server-Verwaltung</Badge> <Badge color="green">Setup über Slash-Befehl</Badge>
 
-Der Welcomer sendet Nachrichten, wenn Mitglieder deinem Server beitreten oder ihn verlassen. Du kannst für beide Ereignisse eigene Kanäle und Nachrichtenvorlagen festlegen.
+Mit Aktivitätschecks fragst du eine bestimmte Rolle innerhalb eines festgelegten Zeitraums ab. Mitglieder bestätigen ihre Aktivität über Buttons oder Emoji-Reaktionen.
 
 ## Modul einrichten und bearbeiten
 
-Starte die Einrichtung mit `!welcomer_setup` in Discord. Eine bestehende Konfiguration kannst du im Dashboard anpassen; dort kannst du das Modul nicht neu aktivieren.
+Führe `/aktivitaet_setup` aus und lege die Optionen für das Modul fest.
 
 <Tabs>
   <Tab title="Via Discord-Befehl" icon="discord">
     <Steps>
       <Step title="Setup-Befehl ausführen">
-        Führe `!welcomer_setup` auf deinem Server aus.
+        Führe `/aktivitaet_setup` mit der Rolle für die Verwaltung und den gewünschten Rückmeldeoptionen aus.
+
+        ```text
+        /aktivitaet_setup admin_role:@Team buttons:True menu:True
+        ```
       </Step>
-      <Step title="Kanäle auswählen">
-        Wähle die Kanäle für Beitritts- und Austrittsnachrichten. Du kannst für beide Ereignisse denselben Kanal verwenden.
+      <Step title="Rückmeldung festlegen">
+        Setze `buttons` auf `True`, um Buttons zu verwenden. Andernfalls bestätigen Mitglieder per Emoji.
       </Step>
-      <Step title="Vorlagen anpassen">
-        Lege die Nachrichtentexte für Willkommens- und Abschieds-Events fest.
+      <Step title="Verwaltungsmenü auswählen">
+        Setze `menu` auf `True`, wenn du ein separates Menü zum Erstellen und Verwalten von Checks senden möchtest.
       </Step>
     </Steps>
   </Tab>
   <Tab title="Im Web-Dashboard" icon="sliders">
-    Passe vorhandene Vorlagen unter **Weitere Module → Welcomer** an und prüfe sie vor dem Speichern in der Vorschau. Das Dashboard aktiviert kein neues Modul.
+    Im Dashboard kannst du eine bestehende Konfiguration anpassen. Ein neues Modul lässt sich dort nicht aktivieren.
   </Tab>
 </Tabs>
 
 ## Kernfunktionen im Überblick
 
 <CardGroup cols={3}>
-  <Card title="Willkommensnachrichten" icon="user-plus">
-    Begrüße neue Mitglieder automatisch im festgelegten Kanal.
+  <Card title="Button oder Emoji" icon="click">
+    Mitglieder melden ihre Aktivität über Buttons oder Emoji-Reaktionen zurück.
   </Card>
 
-  <Card title="Abschiedsnachrichten" icon="user-minus">
-    Informiere den Server, wenn ein Mitglied ihn verlässt oder gekickt wird.
+  <Card title="Eigene Laufzeit" icon="clock">
+    Lege beim Erstellen fest, wie lange ein Check geöffnet bleibt.
   </Card>
 
-  <Card title="Nachrichtenvorschau" icon="eye">
-    Prüfe vorhandene Vorlagen im Dashboard, bevor du sie speicherst.
+  <Card title="Check abbrechen" icon="circle-x">
+    Brich einen laufenden Check bei Bedarf ohne Auswertung ab.
   </Card>
 </CardGroup>
 
 ## Einstellungen & Parameter
 
-Du kannst Vorlagen mit folgenden Variablen personalisieren:
+Erstelle einen Check mit `/aktivitaet_create`:
 
-| Variable | Verwendung |
+| Parameter | Beschreibung |
 | --- | --- |
-| `{user}` | Erwähnt das beigetretene Mitglied. |
-| `{username}` | Zeigt den Benutzernamen an. |
-| `{server}` | Zeigt den Servernamen an. |
-| `{membercount}` | Zeigt die aktuelle Mitgliederanzahl an. |
+| `channel` | Kanal, in dem die Abfrage erscheint. |
+| `ziel` | Rolle, deren Aktivität geprüft wird. |
+| `ueberschrift` | Überschrift der Abfrage. |
+| `text` | Erklärung oder Anweisung für die Mitglieder. |
+| `stunden` | Laufzeit in Stunden, zum Beispiel `0.5` für 30 Minuten oder `1` für eine Stunde. |
 
-Für Abschiedsnachrichten ist `{username}`, `{server}` und `{membercount}` verfügbar. Die Mitgliederanzahl bezieht sich auf den Stand nach dem Austritt.
+Beispiel:
+
+```text
+/aktivitaet_create channel:#Allgemein ziel:@Team ueberschrift:Aktivitätscheck text:Bitte bestätige deine Aktivität. stunden:0.5
+```
+
+Mit `/aktivitaet_cancel` brichst du den laufenden Check ohne Auswertung ab.
 
 ## Wichtige Hinweise
 
-- Der Bot benötigt Schreibrechte in den konfigurierten Kanälen.
-- Prüfe die Vorschau, damit Variablen und Formatierung wie erwartet angezeigt werden.
-- Eine Willkommens- und eine Abschiedsnachricht können in unterschiedlichen Kanälen erscheinen.
+- Vergib die Verwaltungsrolle nur an vertrauenswürdige Teammitglieder.
+- Prüfe vor dem Start die Zielrolle, den Kanal und die Laufzeit.
+- Ein abgebrochener Check wird nicht ausgewertet.

@@ -1,0 +1,80 @@
+---
+title: "Entbannungen"
+description: "Verwalte Entbannungsanträge in Verbindung mit dem Case-System."
+icon: "shield-check"
+---
+
+<Badge color="purple">Moderation</Badge> <Badge color="green">Setup-Menü</Badge>
+
+Das Entbannungssystem ist mit dem Case-System verbunden und dient dazu, Entbannungsanträge strukturiert entgegenzunehmen und Fragen für die Antragstellung festzulegen.
+
+<Note>
+  Richte zuerst das Case-System ein. Das Entbannungssystem ist für die Verwendung in Verbindung mit Cases vorgesehen.
+</Note>
+
+## Modul einrichten und bearbeiten
+
+Führe `/entbannung_setup` aus. Discord öffnet eine **ephemere Nachricht**, die nur du sehen kannst. Wähle darin die Kanäle für Anträge und das Menü aus.
+
+<Tabs>
+  <Tab title="Via Discord-Befehl" icon="discord">
+    <Steps>
+      <Step title="Setup-Menü öffnen">
+        Führe `/entbannung_setup` aus. Die Auswahl erscheint als ephemere Nachricht und ist nur für dich sichtbar.
+      </Step>
+      <Step title="Kanäle auswählen">
+        Lege den Log-Kanal für eingehende Anträge und den Menü-Kanal fest.
+      </Step>
+      <Step title="Fragen bearbeiten">
+        Nutze `/entbannung_fragen`, um bis zu drei zusätzliche Fragen festzulegen oder zu löschen.
+      </Step>
+      <Step title="Antrags-Panel veröffentlichen">
+        Das Panel wird gegebenenfalls automatisch gesendet. Falls nicht, veröffentliche es mit `/entbannung_postmenu`.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Im Web-Dashboard" icon="sliders">
+    Im Dashboard kannst du eine bestehende Konfiguration anpassen. Ein neues Modul lässt sich dort nicht aktivieren.
+  </Tab>
+</Tabs>
+
+## Kernfunktionen im Überblick
+
+<CardGroup cols={3}>
+  <Card title="Anträge protokollieren" icon="inbox">
+    Stelle einen Log-Kanal für eingehende Entbannungsanträge bereit.
+  </Card>
+
+  <Card title="Fragen anpassen" icon="list-check">
+    Ergänze bis zu drei eigene Fragen neben den beiden Standardfragen.
+  </Card>
+
+  <Card title="Panel veröffentlichen" icon="layout">
+    Sende das Antrags-Panel bei Bedarf mit einem eigenen Befehl erneut.
+  </Card>
+</CardGroup>
+
+## Einstellungen & Parameter
+
+Die Standardfragen lauten:
+
+- Warum sollten wir dich entbannen?
+- Was wirst du ändern?
+
+Mit `/entbannung_fragen` kannst du bis zu drei weitere Fragen hinzufügen oder Zusatzfragen löschen.
+
+| Befehl | Zweck |
+| --- | --- |
+| `/entbannung_setup` | Öffnet die Auswahl für Log- und Menü-Kanal. |
+| `/entbannung_fragen` | Fügt Zusatzfragen hinzu oder löscht sie. |
+| `/entbannung_postmenu` | Sendet das Antrags-Panel, falls es nicht automatisch veröffentlicht wurde. |
+
+## Wichtige Hinweise
+
+- Stelle sicher, dass das Team Zugriff auf den Log-Kanal hat.
+- Prüfe, ob das Panel im vorgesehenen Kanal veröffentlicht wurde.
+- Das Case-System muss eingerichtet sein, damit die vorgesehene Verknüpfung verfügbar ist.
+
+<Card title="Case-System" icon="folder-open" href="/modules/sanktionen">
+  Richte zuerst die Cases ein, mit denen das Entbannungssystem zusammenarbeitet.
+</Card>
