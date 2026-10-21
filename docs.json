@@ -13,33 +13,24 @@
       {
         "tab": "Dokumentation - Neu",
         "pages": [
-          "introduction",
           {
             "group": "Discord Bot",
             "pages": [
               "bot-einladen",
               "schnellstart",
-              "faq",
               {
                 "group": "Bot-Module",
                 "pages": [
                   "uebersicht",
                   "modules/aktivitaetschecks",
                   "modules/anti-bot",
-                  "modules/sanktionen",
-                  "modules/entbannungen",
-                  "modules/fahrzeuge",
                   "modules/geburtstag",
                   "modules/giveaway",
                   "modules/haussystem",
                   "modules/ingame-hilfe",
-                  "modules/personensystem",
                   "title-roleplay-management-description-verwalte-den-rp-status-deines-servers-mit-automatisierten-ankuendigungen-steuer-panels-und-dm-benachrichtigungen-icon-gamepad-group-badge-text-roleplay-modul",
-                  "modules/schichten",
                   "modules/serverstatus",
-                  "modules/teamlisten",
                   "modules/tickets",
-                  "modules/welcomer",
                   "verifikation"
                 ]
               }
@@ -48,10 +39,6 @@
           {
             "group": "Bot Dashboard",
             "pages": [
-              "dashboard",
-              "dashboard/server-verwaltung",
-              "dashboard/nutzereinstellungen",
-              "dashboard/statistiken",
               "untitled-page-2"
             ]
           },
@@ -66,10 +53,7 @@
             "group": "Discord-Server & Community",
             "pages": [
               "discord-server",
-              "supportserver",
-              "pro-features",
-              "partnerschaft",
-              "tester-werden"
+              "supportserver"
             ]
           },
           {
@@ -85,58 +69,6 @@
         "pages": [
           "dev/uebersicht",
           "dev/modulvorlage"
-        ]
-      },
-      {
-        "tab": "Dokumentation - Alt",
-        "groups": [
-          {
-            "group": "Allgemeines",
-            "pages": [
-              "introduction",
-              "quickstart",
-              "dashboard",
-              "faq"
-            ]
-          },
-          {
-            "group": "Module und Features",
-            "pages": [
-              "modules/sanktionen",
-              "modules/schichten",
-              "modules/teamlisten",
-              "modules/fahrzeuge",
-              "modules/welcomer",
-              "modules/entbannungen",
-              "modules/personensystem",
-              "modules/roleplay-management",
-              "modules/verifikation"
-            ],
-            "icon": "bot-id"
-          },
-          {
-            "group": "Dashboard",
-            "pages": [
-              "dashboard/nutzereinstellungen",
-              "dashboard/server-verwaltung",
-              "dashboard/statistiken"
-            ]
-          },
-          {
-            "group": "Supportserver",
-            "expanded": true,
-            "pages": [
-              "pro-features",
-              "partnerschaft",
-              "tester-werden"
-            ]
-          },
-          {
-            "group": "API - Beta Phase",
-            "pages": [
-              "anleitung"
-            ]
-          }
         ]
       }
     ]

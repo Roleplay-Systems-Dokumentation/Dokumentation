@@ -1,76 +1,117 @@
 ---
-title: "Aktivitätschecks"
-description: "Prüfe die Aktivität einer Zielrolle mit zeitlich begrenzten Rückmeldungen per Button oder Emoji."
+title: "Aktivitätscheck"
+description: "Überprüfe die Aktivität deiner Servermitglieder mit automatisierten Checks, interaktiven Buttons oder Emojis sowie detaillierten Auswertungen."
 icon: "user-check"
 ---
 
-<Badge color="purple">Server-Verwaltung</Badge> <Badge color="green">Setup über Slash-Befehl</Badge>
+<Badge color="purple">Server-Verwaltung</Badge> <Badge color="green">Setup-Dauer: 2 Min.</Badge>
 
-Mit Aktivitätschecks fragst du eine bestimmte Rolle innerhalb eines festgelegten Zeitraums ab. Mitglieder bestätigen ihre Aktivität über Buttons oder Emoji-Reaktionen.
+Das **Aktivitätscheck-Modul** ermöglicht es dir, schnell und unkompliziert die Aktivität bestimmter Rollen auf deinem Server zu überprüfen. Über interaktive Buttons oder Emoji-Reaktionen können sich Mitglieder als aktiv zurückmelden. Das System bietet ein zentrales Steuer-Menü, automatische Ablaufzeiten und übersichtliche Auswertungen sowie ein Archiv vergangener Checks.
+
+---
 
 ## Modul einrichten und bearbeiten
 
-Führe `/aktivitaet_setup` aus und lege die Optionen für das Modul fest.
+Du kannst das Setup direkt über Discord per Slash-Command ausführen oder das Modul im Web-Dashboard konfigurieren.
 
 <Tabs>
   <Tab title="Via Discord-Befehl" icon="discord">
     <Steps>
       <Step title="Setup-Befehl ausführen">
-        Führe `/aktivitaet_setup` mit der Rolle für die Verwaltung und den gewünschten Rückmeldeoptionen aus.
+        Führe den Befehl `/aktivitaet_setup` aus und lege die grundlegenden Parameter fest:
 
-        ```text
-        /aktivitaet_setup admin_role:@Team buttons:True menu:True
-        ```
+        - **`admin_role`**: Rolle, die neue Aktivitätschecks erstellen und verwalten darf.
+        - **`buttons`**: Wähle `True` für interaktive Buttons oder `False` für Emoji-Reaktionen.
+        - **`menu`**: Wähle `True`, wenn ein zentrales Admin-Steuermenü gesendet werden soll.
       </Step>
-      <Step title="Rückmeldung festlegen">
-        Setze `buttons` auf `True`, um Buttons zu verwenden. Andernfalls bestätigen Mitglieder per Emoji.
-      </Step>
-      <Step title="Verwaltungsmenü auswählen">
-        Setze `menu` auf `True`, wenn du ein separates Menü zum Erstellen und Verwalten von Checks senden möchtest.
+      <Step title="Kanäle & Details festlegen">
+        In der darauffolgenden interaktiven Abfrage legst du die spezifischen Kanäle fest:
+
+        - **Admin-Rolle:** Bestätige die berechtigte Verwalter-Rolle.
+        - **Ziel-Rolle:** Wähle die Standard-Rolle, die überprüft werden soll.
+        - **Check-Kanal:** Der Kanal, in dem die Rückmelde-Nachricht an die Mitglieder gesendet wird.
+        - **Menü-Kanal:** Der Kanal, in dem das permanente Steuer-Panel platziert wird.
       </Step>
     </Steps>
   </Tab>
-  <Tab title="Im Web-Dashboard" icon="sliders">
-    Im Dashboard kannst du eine bestehende Konfiguration anpassen. Ein neues Modul lässt sich dort nicht aktivieren.
+  <Tab title="Via Web-Dashboard" icon="sliders">
+    1. Logge dich im **Dashboard** ein und wähle deinen Server aus.
+    2. Navigiere in der linken Menüleiste zum Punkt **Aktivitätscheck**.
+    3. Wähle die Admin-Rollen, den Rückmelde-Typ (Button vs. Emoji) und die Zielkanäle aus.
+    4. Klicke auf **Speichern**, um die Einstellungen zu übernehmen.
   </Tab>
 </Tabs>
+
+---
 
 ## Kernfunktionen im Überblick
 
 <CardGroup cols={3}>
-  <Card title="Button oder Emoji" icon="click">
-    Mitglieder melden ihre Aktivität über Buttons oder Emoji-Reaktionen zurück.
+  <Card title="Flexible Rückmeldung" icon="message-2-code">
+    Lass deine Mitglieder ganz einfach per Button-Klick oder Emoji-Reaktion ihre Aktivität bestätigen.
   </Card>
-  <Card title="Eigene Laufzeit" icon="clock">
-    Lege beim Erstellen fest, wie lange ein Check geöffnet bleibt.
+  <Card title="Zentrales Admin-Menü" icon="adjustments-alt">
+    Steuere laufende Checks, starte neue Überprüfungen oder wende Auswertungen direkt über ein zentrales Panel an.
   </Card>
-  <Card title="Check abbrechen" icon="circle-x">
-    Brich einen laufenden Check bei Bedarf ohne Auswertung ab.
+  <Card title="Automatisches Archiv" icon="archive">
+    Behalte jederzeit den Überblick über alle vergangenen Checks und deren Ergebnisse.
   </Card>
 </CardGroup>
 
-## Einstellungen & Parameter
+---
 
-Erstelle einen Check mit `/aktivitaet_create`:
+## Befehle & Steuerung
 
-| Parameter | Beschreibung |
-| --- | --- |
-| `channel` | Kanal, in dem die Abfrage erscheint. |
-| `ziel` | Rolle, deren Aktivität geprüft wird. |
-| `ueberschrift` | Überschrift der Abfrage. |
-| `text` | Erklärung oder Anweisung für die Mitglieder. |
-| `stunden` | Laufzeit in Stunden, zum Beispiel `0.5` für 30 Minuten oder `1` für eine Stunde. |
+<AccordionGroup>
+  <Accordion title="/aktivitaet_setup – Modul konfigurieren" icon="settings">
+    Richtet das Modul und die Berechtigungen auf deinem Server ein.
 
-Beispiel:
+    **Parameter:**
 
-```text
-/aktivitaet_create channel:#Allgemein ziel:@Team ueberschrift:Aktivitätscheck text:Bitte bestätige deine Aktivität. stunden:0.5
-```
+    - `admin_role`: Die Rolle, welche Berechtigung für Erstellung/Auswertung hat.
+    - `buttons` (`True`/`False`): Legt fest, ob Buttons oder Emojis genutzt werden.
+    - `menu` (`True`/`False`): Sendet ein dauerhaftes Steuer-Menü in den Menü-Kanal.
+  </Accordion>
 
-Mit `/aktivitaet_cancel` brichst du den laufenden Check ohne Auswertung ab.
+  <Accordion title="/aktivitaet_create – Neuen Check starten" icon="new-section">
+    Startet einen neuen Aktivitätscheck für eine bestimmte Rolle. _(Kann auch direkt über das Admin-Menü gestartet werden)._
 
-## Wichtige Hinweise
+    **Parameter:**
 
-- Vergib die Verwaltungsrolle nur an vertrauenswürdige Teammitglieder.
-- Prüfe vor dem Start die Zielrolle, den Kanal und die Laufzeit.
-- Ein abgebrochener Check wird nicht ausgewertet.
+    - `channel`: Der Kanal, in dem die Check-Nachricht erscheint.
+    - `ziel`: Die zu überprüfende Ziel-Rolle.
+    - `ueberschrift`: Der Titel/Headliner der Check-Nachricht.
+    - `text`: Die Nachricht oder Anweisung an die Mitglieder.
+    - `stunden`: Die Laufzeit des Checks in Stunden.
+  </Accordion>
+
+  <Accordion title="/aktivitaet_auswerten – Check beenden & auswerten" icon="square-check">
+    Beendet den aktuell laufenden Aktivitätscheck vorzeitig oder regulär und sendet eine detaillierte Übersichtsnachricht mit allen aktiven und inaktiven Mitgliedern.
+  </Accordion>
+
+  <Accordion title="/aktivitaet_cancel – Check abbrechen" icon="calendar-exclamation">
+    Bricht den aktuellen Aktivitätscheck sofort ab, ohne Ergebnisse zu speichern oder eine Auswertung zu generieren.
+  </Accordion>
+
+  <Accordion title="/aktivitaet_archive – Vergangene Checks einsehen" icon="archive">
+    Öffnet eine Liste aller bisher durchgeführten Aktivitätschecks inklusive historischer Daten und Statistiken.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Wichtige Admin-Hinweise
+
+<Tip>
+  **Buttons vs. Emojis:** Buttons bieten eine modernere Optik und verhindern, dass Nutzer versehentlich die Reaktionen anderer Mitglieder entfernen oder verfälschen.
+</Tip>
+
+<Note>
+  **Rechtevergabe:** Stelle sicher, dass nur Vertrauenspersonen die `admin_role` erhalten, da diese Benutzer volle Kontrolle über das Auswerten und Abbrechen von Aktivitätschecks haben.
+</Note>
+
+---
+
+<Card title="Brauchst du Hilfe beim Setup?" icon="discord" href="{discordInvite}">
+  Du hast Fragen oder brauchst Unterstützung bei der Einrichtung des Aktivitätscheck-Moduls? Tritt unserem Discord-Server bei!
+</Card>
