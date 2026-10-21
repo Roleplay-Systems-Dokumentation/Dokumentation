@@ -1,0 +1,98 @@
+---
+title: "Welcomer"
+description: "Automatische Willkommens- und Abschiedsnachrichten mit konfigurierbaren Vorlagen."
+---
+
+Das Welcomer-Modul sendet automatisch Nachrichten, wenn Mitglieder deinem Server beitreten oder ihn verlassen. Du kannst Vorlagen für beide Ereignistypen individuell gestalten und festlegen, in welchem Kanal die Nachrichten erscheinen sollen.
+
+## Modul aktivieren
+
+<Tabs>
+  <Tab title="Discord">
+    <Steps>
+      <Step title="Setup-Befehl ausführen">
+        Führe auf deinem Server den Befehl `!welcomer_setup` aus.
+      </Step>
+      <Step title="Kanäle wählen">
+        Wähle die Kanäle für die Nachrichten bei Join und Leave-Ereignissen aus.
+      </Step>
+      <Step title="Texte konfigurieren">
+        Konfiguriere die Texte, die in Nachrichten versendet werden sollen.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Willkommens-Events
+
+Sobald ein neues Mitglied deinem Server beitritt, sendet der Bot automatisch eine Willkommensnachricht in den konfigurierten Kanal.
+
+### Verfügbare Variablen für Vorlagen
+
+| Variable | Beschreibung |
+| --- | --- |
+| `{user}` | Erwähnt das neue Mitglied |
+| `{username}` | Benutzername ohne Erwähnung |
+| `{server}` | Name des Servers |
+| `{membercount}` | Aktuelle Mitgliederanzahl |
+
+**Beispielvorlage:**
+
+```text
+Willkommen auf {server}, {user}! 🎉
+Du bist unser {membercount}. Mitglied. Viel Spaß bei uns!
+```
+
+## Abschieds-Events
+
+Wenn ein Mitglied den Server verlässt oder gekickt wird, sendet der Bot eine entsprechende Nachricht in den konfigurierten Kanal.
+
+### Verfügbare Variablen für Abschieds-Vorlagen
+
+| Variable | Beschreibung |
+| --- | --- |
+| `{username}` | Benutzername des ausgetretenen Mitglieds |
+| `{server}` | Name des Servers |
+| `{membercount}` | Aktuelle Mitgliederanzahl nach dem Austritt |
+
+**Beispielvorlage:**
+
+```text
+{username} hat den Server verlassen. Wir wünschen alles Gute!
+Aktuell sind noch {membercount} Mitglieder bei uns.
+```
+
+<Note>
+  Willkommens- und Abschieds-Events können in unterschiedlichen Kanälen ausgegeben werden. Du musst für beide einen Kanal konfigurieren – oder denselben Kanal für beide Ereignisse nutzen.
+</Note>
+
+## Vorlagen konfigurieren
+
+Vorlagen werden im Dashboard unter **Weitere Module → Welcomer** gepflegt. Du kannst:
+
+- **Nachrichtentext** individuell formulieren
+- **Vorschau** der Nachricht direkt im Dashboard ansehen, bevor du speicherst
+
+<Tip>
+  Nutze das Embed-Format, um die Willkommensnachricht optisch ansprechender zu gestalten. Embeds unterstützen Farben, Bilder und strukturierte Felder.
+</Tip>
+
+## Häufige Fragen
+
+<AccordionGroup>
+  <Accordion title="Kann ich Bild-Avatare in der Willkommensnachricht anzeigen?">
+    Ja. Im Embed-Format kannst du den Avatar des neuen Mitglieds als Thumbnail einbinden. Aktiviere dazu die entsprechende Option im Dashboard.
+  </Accordion>
+
+  <Accordion title="Was passiert, wenn ein Mitglied gebannt wird?">
+    Auch bei einem Ban wird das Abschieds-Event ausgelöst, sofern es konfiguriert ist.
+  </Accordion>
+
+  <Accordion title="Kann ich den Welcomer temporär deaktivieren?">
+    Dieses Feature wird derzeit eingebaut…
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  Stelle sicher, dass der Bot Schreibrechte in den konfigurierten Kanälen hat. Andernfalls können die Nachrichten nicht gesendet werden.
+</Warning>

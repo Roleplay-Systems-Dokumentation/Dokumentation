@@ -1,0 +1,98 @@
+---
+title: "Sanktionen"
+description: "Warns, Kicks und Bans mit Logging und Auswertung im Dashboard."
+---
+
+Das Sanktions-Modul bietet deinem Moderationsteam ein strukturiertes System zur Verhängung und Dokumentation von Strafen. Alle Aktionen werden als sogenannte **Cases** gespeichert und sind im Dashboard vollständig einsehbar und filterbar. Optional kannst du eine Beweispflicht aktivieren, sodass jede Sanktion mit einem Screenshot oder einer Begründung belegt werden kann.
+
+## Modul aktivieren
+
+Du kannst das Sanktions-Modul über den `!setup`-Befehl konfigurieren.
+
+<Tabs>
+  <Tab title="Discord">
+    <Steps>
+      <Step title="Setup-Befehl ausführen">
+        Führe auf deinem Server den Befehl `!setup` aus. Der Bot führt dich durch die Konfiguration des Moduls.
+      </Step>
+      <Step title="Sanktions-Kanal auswählen">
+        Wähle im Setup-Prozess den Case-Kanal aus, in diesen wird das Panel gesendet, dass das Menü per DM versendet.
+      </Step>
+      <Step title="Log-Kanal festlegen">
+        Gib den Discord-Kanal an, in dem alle Sanktionsmeldungen geloggt werden sollen.
+      </Step>
+      <Step title="Team-Rolle festlegen">
+        Wähle die Teamrolle aus, die das Menü nutzen darf.
+      </Step>
+      <Step title="Statistik-Kanal wählen">
+        Wähle den Kanal aus, in den ein Embet mit aktuellen Statistiken gesendet werden soll.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Sanktionstypen
+
+Das Modul unterstützt drei Arten von Sanktionen:
+
+<CardGroup cols={3}>
+  <Card title="Verwarnung (Warn)" icon="brake-warning">
+    Ein formeller Hinweis an ein Mitglied. Verwarnungen werden als Case gespeichert und häufen sich im Verlauf an. Sie haben keine direkte Discord-Auswirkung.
+  </Card>
+
+  <Card title="Kick" icon="hammer">
+    Das Mitglied wird vom Server entfernt, kann aber jederzeit wieder beitreten. Geeignet für kurzfristige Maßnahmen.
+  </Card>
+
+  <Card title="Ban" icon="ban">
+    Das Mitglied wird dauerhaft vom Server ausgeschlossen. Bans sind über das Entbannungssystem anfechtbar.
+  </Card>
+</CardGroup>
+
+## Beweispflicht
+
+Wenn die Beweispflicht aktiviert ist, kann jeder Case ein Anhang (z. B. Screenshot) oder einer ausführlichen Begründung beigelegt werden.
+
+<Tip>
+  Die Beweispflicht ist besonders für größere Teams empfehlenswert, um Missbrauch zu verhindern und Nachvollziehbarkeit zu gewährleisten.
+</Tip>
+
+Du aktivierst die Beweispflicht im Dashboard unter **Bestrafungen → Konfigurationen → Beweispflicht**.
+
+## Cases im Dashboard
+
+Jede verhängte Sanktion wird automatisch als Case gespeichert. Im Dashboard unter **Sanktionen → Cases** kannst du:
+
+- Alle Cases nach **Typ**, **Moderator** oder **Mitglied** filtern
+- Den vollständigen Verlauf eines Mitglieds einsehen
+- Cases mit Notizen versehen oder löschen
+- Cases exportieren (CSV)
+
+<AccordionGroup>
+  <Accordion title="Case-Übersicht">
+    Die Case-Übersicht listet alle Sanktionen chronologisch auf. Jeder Eintrag enthält den Typ, das betroffene Mitglied, den verantwortlichen Moderator, den Grund und den Zeitstempel.
+  </Accordion>
+
+  <Accordion title="Mitgliederverlauf">
+    Klicke auf ein Mitglied, um alle seine Cases in einer Übersicht zu sehen. So erkennst du auf einen Blick, ob es sich um einen Wiederholungsfall handelt.
+  </Accordion>
+</AccordionGroup>
+
+## Entbannungen
+
+Gebannte Mitglieder können über das **Entbannungssystem** einen Antrag stellen. Dieses Modul baut direkt auf den Cases des Sanktions-Systems auf und ermöglicht eine strukturierte Prüfung durch das Team.
+
+<Card title="Entbannungssystem" icon="shield-check" href="/modules/entbannungen">
+  Mehr zum Entbannungssystem und zur Verknüpfung mit den Sanktions-Cases.
+</Card>
+
+## Tipps für Moderationsteams
+
+<Warning>
+  Vergib Sanktionsbefehle nur an vertrauenswürdige Rollen. Überprüfe regelmäßig die Berechtigungseinstellungen im Dashboard.
+</Warning>
+
+- Lege intern klare Regeln fest, wann welche Sanktion angemessen ist.
+- Nutze die Beweispflicht, um die Qualität der Moderationsentscheidungen zu sichern.
+- Führe regelmäßige Reviews der offenen Cases durch, um veraltete Einträge zu bereinigen.
+- Verknüpfe das Sanktions-Modul mit dem Entbannungssystem, damit gebannte Mitglieder einen geregelten Weg zurück haben.

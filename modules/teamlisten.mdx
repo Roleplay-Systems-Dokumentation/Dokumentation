@@ -1,0 +1,107 @@
+---
+title: "Teamlisten"
+description: "Automatische Teamlisten mit Rollenanzeige, Beschreibungen und Online-Status."
+---
+
+Das Teamlisten-Modul erstellt eine automatische Team-Übersicht als Discord-Embed und hält sie laufend aktuell. Rollen können priorisiert, umbenannt und beschrieben werden. Zusätzlich lassen sich Titel, Farbe, Footer und Anzeigeverhalten im Design anpassen.
+
+## Modul aktivieren
+
+<Tabs>
+  <Tab title="Discord">
+    <Steps>
+      <Step title="Setup starten (Pro)">
+        Führe als Administrator den Befehl !teamliste\_setup oder /teamliste\_setup aus.
+      </Step>
+      <Step title="Rollen und Reihenfolge festlegen">
+        Wähle im Wizard 1 bis 15 Rollen in der Reihenfolge von oben nach unten. Pro Rolle kannst du optional einen eigenen Titel und eine Beschreibung hinterlegen.
+      </Step>
+      <Step title="Teamliste posten">
+        Nutze !teamliste\_post oder /teamliste\_post im gewünschten Zielkanal.
+      </Step>
+      <Step title="Design optional anpassen (Pro)">
+        Passe mit /teamliste\_design Titel, Farbe, Footer und Status-Anzeige an.
+      </Step>
+      <Step title="Weitere Rollen hinzufügen">
+        Im Dashboard kannst du unter "Teamliste" bis zu 30 Rollen in die Teamliste hinzufügen
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+<Warning>
+  Das Setup und Design sind Pro-Funktionen. Ohne Pro-Rolle auf dem Hauptserver kann der Setup-Wizard nicht genutzt werden.
+</Warning>
+
+## Funktionsweise
+
+Nach dem Posten speichert der Bot Kanal- und Nachrichten-ID und aktualisiert die Teamliste automatisch:
+
+- periodisch alle 5 Minuten
+- bei Rollenänderungen überwachter Teamrollen
+- manuell über !teamliste\_refresh oder /teamliste\_refresh
+
+Wenn die ursprüngliche Teamlisten-Nachricht gelöscht wurde, setzt das System die gespeicherte Nachricht automatisch zurück.
+
+<Note>
+  Nutze für Teamlisten am besten einen dedizierten, ruhigen Kanal. So bleibt die Übersicht lesbar und wird nicht durch Chat-Nachrichten verdrängt.
+</Note>
+
+## Rollenanzeige
+
+Du bestimmst exakt, welche Rollen auftauchen und in welcher Reihenfolge sie dargestellt werden. Jede Rolle wird als eigener Abschnitt ausgegeben. Mitglieder ohne konfigurierte Teamrolle erscheinen nicht in der Liste.
+
+Für jede Rolle kannst du festlegen:
+
+- Name oder eigener Anzeige-Titel
+- Beschreibung unter dem Abschnitt
+- Position in der Rollenreihenfolge
+
+## Rollenmodus
+
+Im Setup kannst du den Rollenmodus festlegen:
+
+- Nur höchste Rolle pro Nutzer: Jeder Nutzer wird nur einmal im höchsten passenden Abschnitt angezeigt.
+- Alle Teamrollen pro Nutzer: Nutzer können in mehreren passenden Abschnitten erscheinen.
+
+## Design und Status
+
+Über /teamliste\_design kannst du folgende Punkte konfigurieren:
+
+- Embed-Titel
+- Embed-Farbe (Hex)
+- Footer-Text
+- Status-Anzeige an oder aus
+
+Der Online-Status im Embed funktioniert nur, wenn der Presence-Intent aktiv ist. Ist der Presence-Intent deaktiviert, wird die Liste ohne Status-Badges aufgebaut.
+
+<Tip>
+  Wenn du Status-Badges nutzen willst, aktiviere Presence-Intents in deinem Bot-Setup und im Developer Portal.
+</Tip>
+
+## Zusatzfunktionen
+
+- !teamliste\_info und /teamliste\_info zeigen die aktive Konfiguration.
+- !teamliste\_check und /teamliste\_check prüfen typische Fehlerquellen.
+- !teamliste\_reset und /teamliste\_reset löschen die Konfiguration (Pro).
+- Bei Rollenänderungen überwachter Teamrollen erhalten Mitglieder automatisch eine DM-Benachrichtigung.
+
+## Häufige Fragen
+
+<AccordionGroup>
+  <Accordion title="Wie oft wird die Teamliste aktualisiert?">
+    Automatisch alle 5 Minuten, zusätzlich bei relevanten Rollenänderungen sowie jederzeit manuell per Refresh-Befehl.
+  </Accordion>
+
+  <Accordion title="Kann ich mehrere Teamlisten pro Server erstellen?">
+    Pro Server wird eine Konfiguration mit einer gespeicherten Teamlisten-Nachricht verwaltet.
+  </Accordion>
+
+  <Accordion title="Warum sehe ich keine Online-Statuspunkte?">
+    Die Statusanzeige benötigt aktivierte Presence-Intents. Ohne Presence-Intent bleibt die Teamliste funktional, aber ohne Status-Badges.
+  </Accordion>
+
+  <Accordion title="Was passiert, wenn ein Nutzer mehrere Teamrollen hat?">
+    Das hängt vom gewählten Rollenmodus ab: Entweder nur die höchste konfigurierte Rolle oder alle passenden Teamrollen.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,85 @@
+---
+title: "Personensystem"
+description: "Personeneinträge, Roblox-Infos und In-Game-Rechteanfragen direkt über Discord verwalten."
+---
+
+Mit dem Personensystem verwaltest du Discord-User und ihre Roblox-Daten direkt im Server. Team und Verwaltung können Einträge pflegen, Roblox-Profile nachschlagen und auf Wunsch ein Rechteanfrage-System nutzen. So laufen Identifikation und Freigaben zentral an einer Stelle.
+
+## Modul aktivieren
+
+<Tabs>
+  <Tab title="Discord">
+    <Steps>
+      <Step title="Setup-Befehl ausführen">
+        Führe auf deinem Server den Befehl `!personen_setup` aus.
+      </Step>
+      <Step title="Rollen festlegen">
+        Setze im Setup die Team-Rolle und die Verwaltungsrolle. Die Verwaltungsrolle darf Einträge verwalten, die Team-Rolle darf das Verzeichnis einsehen.
+      </Step>
+      <Step title="Kanäle konfigurieren">
+        Lege den Hauptmenü-Kanal fest. Optional kannst du zusätzlich Anfrage-Kanal und Anfrage-Menü-Kanal für Rechteanfragen konfigurieren.
+      </Step>
+      <Step title="Setup abschließen">
+        Klicke im Setup auf "Setup abschließen". Der Bot sendet dann das Personenmenü in den konfigurierten Kanal.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Personenmenü
+
+Das Kernstück ist ein interaktives Discord-Menü mit Buttons für alle wichtigen Aktionen:
+
+- Eintragen/Bearbeiten: Nutzer pflegen ihren eigenen Roblox-Eintrag.
+- Mein Eintrag: Zeigt den eigenen gespeicherten Datensatz.
+- Alle Einträge: Zeigt das gesamte Verzeichnis für berechtigte Rollen.
+- Roblox-Spieler Informationen: Öffnet eine Roblox-Profilabfrage per Modal.
+- Verwaltung: Admin-Funktionen zum Bearbeiten oder Löschen fremder Einträge.
+
+<Note>
+  Das Personenmenü arbeitet vollständig über Discord-Interaktionen (Buttons, Selects und Modals). Stelle sicher, dass der Bot in den konfigurierten Kanälen Nachrichten und Interaktionen senden darf.
+</Note>
+
+## Anwendungsfälle
+
+<CardGroup cols={2}>
+  <Card title="Einheitliche Spielerverwaltung" icon="users">
+    Roblox-Nutzername und Anzeigename werden pro Discord-User sauber hinterlegt und zentral abrufbar gemacht.
+  </Card>
+
+  <Card title="Schnelle Roblox-Profile" icon="search">
+    Teammitglieder können Roblox-Profile direkt im Discord-Menü abrufen, inklusive User-ID, Verifizierungsstatus und Thumbnail.
+  </Card>
+
+  <Card title="Strukturierte Rechteanfragen" icon="shield">
+    In-Game-Rechteanfragen werden in einen Prüfkanal gesendet und können dort per Buttons angenommen oder abgelehnt werden.
+  </Card>
+</CardGroup>
+
+## Berechtigungen
+
+Die Zugriffskontrolle läuft über Administratorrechte und die im Setup gesetzten Rollen:
+
+- Administratoren können das Setup ausführen und ändern.
+- Verwaltungsrolle darf Einträge verwalten.
+- Teamrolle und Verwaltungsrolle dürfen alle Einträge ansehen.
+- Rechteanfragen dürfen nur von der Verwaltung angenommen oder abgelehnt werden.
+
+<Warning>
+  Das Verzeichnis enthält personenbezogene Zuordnungen zwischen Discord- und Roblox-Konten. Gib Einsichts- und Verwaltungsrechte nur an Rollen, die diese Daten wirklich benötigen.
+</Warning>
+
+## Rechteanfragen (optional)
+
+Wenn du das Anfragesystem aktivierst, können eingetragene Nutzer In-Game-Rechte über ein separates Menü anfragen. Die Anfrage landet als Embed im Anfrage-Kanal und kann dort direkt bearbeitet werden:
+
+- Annehmen: Anfrage wird als genehmigt markiert.
+- Ablehnen: Grund wird abgefragt und in der Anfrage gespeichert.
+
+Der Antragsteller erhält in beiden Fällen eine DM mit dem Ergebnis.
+
+## Tipps
+
+<Tip>
+  Nutze einen separaten Team-Kanal für das Personenmenü und einen eigenen Moderationskanal für Rechteanfragen. So bleiben öffentliche Chats sauber und Entscheidungen nachvollziehbar.
+</Tip>

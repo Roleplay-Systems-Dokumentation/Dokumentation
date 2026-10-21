@@ -1,0 +1,78 @@
+---
+title: "Entbannungen"
+description: "Community-basiertes Entbannungssystem auf Basis der Sanktions-Cases."
+---
+
+Das Entbannungs-Modul bietet gebannten Mitgliedern einen strukturierten Weg, eine Wiederaufnahme in die Community zu beantragen. Anträge sind direkt mit den Cases aus dem Sanktions-System verknüpft, sodass dein Team alle relevanten Informationen auf einen Blick hat und fundiert entscheiden kann.
+
+<Note>
+  Das Entbannungs-Modul setzt das **Sanktions-Modul** voraus. Stelle sicher, dass Sanktionen aktiviert und Cases vorhanden sind, bevor du Entbannungen einrichtest.
+</Note>
+
+## Modul aktivieren
+
+<Tabs>
+  <Tab title="Discord">
+    <Steps>
+      <Step title="Setup-Befehl ausführen">
+        Führe auf deinem Server den Befehl `!entbannungsetup` aus.
+      </Step>
+      <Step title="Entbannungs-Modul auswählen">
+        Wähle im Setup-Dialog das Modul **Entbannungen** aus.
+      </Step>
+      <Step title="Antragsdaten konfigurieren">
+        Lege den Kanal für eingehende Anträge sowie den des Panels aus.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Verknüpfung mit dem Sanktions-System
+
+Jeder Entbannungsantrag ist mit dem Ban-Case des Mitglieds im Sanktions-System verknüpft. Beim Review sieht das zuständige Team:
+
+- Den ursprünglichen Ban-Grund und Zeitpunkt
+- Alle weiteren Cases (Warns, Kicks) des Mitglieds
+- Den verantwortlichen Moderator
+- Ggf. beigefügte Beweise (wenn Beweispflicht aktiv war)
+
+So muss das Review-Team nicht manuell in der Case-Liste suchen – alle Informationen erscheinen direkt im Antrag.
+
+<Card title="Sanktions-Cases" icon="folder-open" href="/modules/sanktionen">
+  Mehr über die Case-Verwaltung im Sanktions-System.
+</Card>
+
+## Antragsprozess
+
+### Antrag stellen
+
+Gebannte Mitglieder können – soweit sie noch Zugriff auf einen öffentlichen Kanal oder eine externe Plattform haben – einen Entbannungsantrag stellen. Der genaue Weg hängt von deiner Konfiguration ab:
+
+- **Discord-Kanal**: Das Mitglied schreibt in einem für gebannte Mitglieder zugänglichen Kanal den Befehl `!entbannen`.
+
+### Review durch das Team
+
+Das zuständige Review-Team sieht den Antrag inklusive aller verknüpften Case-Daten und kann per Schaltfläche direkt im Discord-Post entscheiden:
+
+<CardGroup cols={2}>
+  <Card title="Annehmen" icon="check">
+    Der Ban muss nun In-Game aufgehoben werden. Das Mitglied erhält eine Benachrichtigung per DM.
+  </Card>
+
+  <Card title="Ablehnen" icon="x">
+    Der Antrag wird abgelehnt. Optional kannst du eine Begründung hinterlegen, die dem Mitglied mitgeteilt wird.
+  </Card>
+</CardGroup>
+
+Alle Entscheidungen werden ebenfalls als Cases im Sanktions-System gespeichert.
+
+<Warning>
+  Stelle sicher, dass nur vertrauenswürdige Rollen Entbannungsanträge bearbeiten dürfen. Lege das dafür in den Kanalberechtigungen fest.
+</Warning>
+
+## Antragsfragen konfigurieren
+
+Die Fragen sind:
+
+- Warum sollten wir dich entbannen?
+- Was wirst du ändern?

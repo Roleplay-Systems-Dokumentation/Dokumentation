@@ -1,0 +1,86 @@
+---
+title: "Schichten"
+description: "Dienstzeiten per Discord steuern – mit automatischen Erinnerungen, Rollensteuerung und Statistiken."
+---
+
+Das Schicht-Modul ermöglicht es deinen Teammitgliedern, ihren Dienst direkt über Discord zu starten und zu beenden. Der Bot übernimmt dabei automatisch die Rollenvergabe, sendet Erinnerungen bei vergessenen Dienstenden und wertet alle Schichtdaten im Dashboard aus.
+
+## Modul aktivieren
+
+<Tabs>
+  <Tab title="Discord">
+    <Steps>
+      <Step title="Setup-Befehl ausführen">
+        Führe auf deinem Server den Befehl `!shift_setup`\*\* \*\*in dem Kanal, wo der Befehl ausgeführt wird, wird das Panel zum starten und beenden der Schicht gesendet.
+      </Step>
+      <Step title="Team-Rolle auswählen">
+        Wähle im Setup-Dialog die Team-Rolle aus, die ihre Schicht starten und beenden darf.
+      </Step>
+      <Step title="Verwaltungsrolle wählen">
+        Wähle die Rolle, die fremde Schichten beenden darf.
+      </Step>
+      <Step title="On-Duty-Rolle wählen">
+        Wähle die Rolle aus, die während der Admin-Schicht dem jeweiligen Nutzer gegeben werden soll.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Dienststart und Dienstende
+
+Teammitglieder starten und beenden ihre Schicht über das Panel. Je nach Angaben wird die Schicht nach einer bestimmten Zeit automatisch beendet (die Zeit kann im Dashboard angepasst werden).
+
+## Rollensteuerung
+
+Sobald ein Mitglied seinen Dienst startet, vergibt der Bot automatisch die konfigurierte **Dienst-Rolle**. Diese kann z. B. dazu genutzt werden:
+
+- Zugriff auf interne Kanäle zu steuern
+- Den Online-Dienststatus in Teamlisten sichtbar zu machen
+- Externe Integrationen oder andere Bot-Regeln auszulösen
+
+Beim Dienstende wird die Rolle automatisch wieder entzogen.
+
+## Automatische Erinnerungen
+
+Du kannst festlegen, nach wie vielen Stunden ohne Dienstende der Bot eine Erinnerung senden soll. So werden vergessene offene Schichten vermieden.
+
+<Tip>
+  Standartmäßig sind folgende Zeiten eingestellt:
+
+  - Erinnerung nach 4 Stunden
+  - Automatisches beenden der Schicht nach 8 Stunden
+</Tip>
+
+Die Erinnerung wird als Direktnachricht an den jeweiligen Nutzer versendet.
+
+## Dashboard-Übersicht
+
+Im Dashboard unter **Schichten** stehen dir drei Tabs zur Verfügung:
+
+<AccordionGroup>
+  <Accordion title="Schicht-Analytics">
+    Eine vollständige Liste aller Nutzer mit Schichten in einer Tabelle zur groben Übersicht.
+  </Accordion>
+
+  <Accordion title="Schicht-Historie">
+    Liste aller beendeten Schichten mit möglichem Export als CSV-Datei.
+  </Accordion>
+
+  <Accordion title="Aktive Schichten">
+    Eine Echtzeitansicht aller Mitglieder, die sich gerade im Dienst befinden – inklusive Startzeit und bisheriger Dienstdauer.
+  </Accordion>
+
+  <Accordion title="Schicht-Detail">
+    Auswertung von Schichten pro Nutzer mit allen Daten.
+  </Accordion>
+</AccordionGroup>
+
+## Wichtige Hinweise
+
+<Warning>
+  Mitglieder können ihren Dienst nur einmal gleichzeitig aktiv haben. Ein erneutes Starten ohne vorheriges Dienstende wird abgelehnt.
+</Warning>
+
+<Note>
+  Wenn ein Mitglied den Server verlässt, läuft die Schicht bis zum automatischen beenden aus.
+</Note>

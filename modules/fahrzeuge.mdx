@@ -1,0 +1,62 @@
+---
+title: "Fahrzeuge"
+description: "Kennzeichen- und Fahrzeugverwaltung direkt aus Discord mit schneller Suche."
+---
+
+Das Fahrzeug-Automenü ermöglicht deinem Team, Fahrzeuge und Kennzeichen blitzschnell direkt über Discord nachzuschlagen. Anstatt in externen Listen oder Tabellen zu suchen, ruft der Bot die Fahrzeugdaten auf Anfrage ab und stellt sie übersichtlich dar. Das spart Zeit im laufenden Spielbetrieb.
+
+## Modul aktivieren
+
+<Tabs>
+  <Tab title="Discord">
+    <Steps>
+      <Step title="Setup-Befehl ausführen">
+        Führe auf deinem Server den Befehl `!auto_setup` aus.
+      </Step>
+      <Step title="Präfix setzen">
+        Wähle ein Präfix für die Kennzeichen aus. Dieses gilt für alle Einträge.
+      </Step>
+      <Step title="Team-Rolle und Verwaltungsrolle wäheln">
+        Wähle die Team-Rolle (eintragen eines neuen Kennzeichens) und die Verwaltungsrolle (verwalten der aktiven Kennzeichen) aus.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Fahrzeug-Automenü
+
+Das Kernstück des Moduls ist das interaktive Automenü. Mit einem Befehl öffnet der Bot ein Discord-Menü, über das Teammitglieder Kennzeichen oder Fahrzeugdaten eingeben und sofort Ergebnisse erhalten.
+
+<Note>
+  Das Automenü funktioniert mit Discord-Interaktionen (Buttons und Modals). Stelle sicher, dass der Bot die nötigen Berechtigungen hat, um Interaktionen in dem konfigurierten Kanal zu senden.
+</Note>
+
+## Anwendungsfälle
+
+<CardGroup cols={2}>
+  <Card title="Kennzeichenabfrage" icon="search">
+    Ein Teammitglied gibt ein Kennzeichen ein und erhält sofort die hinterlegten Fahrzeugdaten – Modell, Farbe, Eigentümer und Status.
+  </Card>
+
+  <Card title="Schnelle Teamsuche" icon="zap">
+    Keine externen Tools mehr nötig – alle Infos kommen direkt in Discord, ohne den Spielfluss zu unterbrechen.
+  </Card>
+
+  <Card title="Berechtigungssteuerung" icon="shield">
+    Nur autorisierte Rollen können Fahrzeugabfragen starten. Unbefugter Zugriff wird automatisch abgelehnt.
+  </Card>
+</CardGroup>
+
+## Berechtigungen
+
+Du steuerst im Dashboard, welche Rollen das Fahrzeug-Automenü nutzen dürfen. So stellst du sicher, dass Fahrzeugdaten nur für die zuständigen Teammitglieder einsehbar sind.
+
+<Warning>
+  Fahrzeugdaten können sensible Informationen enthalten. Schränke den Zugriff auf die Rollen ein, die diese Daten für ihre Aufgaben tatsächlich benötigen.
+</Warning>
+
+## Tipps
+
+<Tip>
+  Richte einen separaten, nur für das Team sichtbaren Kanal für Fahrzeuganfragen ein. So bleiben öffentliche Kanäle übersichtlich.
+</Tip>
