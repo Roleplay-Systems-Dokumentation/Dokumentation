@@ -5,7 +5,7 @@
   "favicon": "https://icons.duckduckgo.com/ip3/systems.nrw-roleplay.de.ico",
   "colors": {
     "primary": "#5865F2",
-    "dark": "#1a1a2e"
+    "dark": "#5865F2"
   },
   "navigation": {
     "tabs": [
@@ -25,20 +25,20 @@
                   "uebersicht",
                   "modules/aktivitaetschecks",
                   "modules/anti-bot",
-                  "modules/fahrzeuge",
                   "modules/sanktionen",
                   "modules/entbannungen",
+                  "modules/fahrzeuge",
                   "modules/geburtstag",
                   "modules/giveaway",
                   "modules/haussystem",
                   "modules/ingame-hilfe",
                   "modules/personensystem",
+                  "title-roleplay-management-description-verwalte-den-rp-status-deines-servers-mit-automatisierten-ankuendigungen-steuer-panels-und-dm-benachrichtigungen-icon-gamepad-group-badge-text-roleplay-modul",
                   "modules/schichten",
                   "modules/serverstatus",
                   "modules/teamlisten",
                   "modules/tickets",
                   "modules/welcomer",
-                  "title-roleplay-management-description-verwalte-den-rp-status-deines-servers-mit-automatisierten-ankuendigungen-steuer-panels-und-dm-benachrichtigungen-icon-gamepad-group-badge-text-roleplay-modul",
                   "verifikation"
                 ]
               }
