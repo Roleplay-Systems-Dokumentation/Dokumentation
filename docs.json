@@ -109,7 +109,8 @@
               "modules/personensystem",
               "modules/roleplay-management",
               "modules/verifikation"
-            ]
+            ],
+            "icon": "bot-id"
           },
           {
             "group": "Dashboard",
