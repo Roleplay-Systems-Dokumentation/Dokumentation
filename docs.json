@@ -13,6 +13,8 @@
       {
         "tab": "Dokumentation - Neu",
         "pages": [
+          "willkommen-beim-roleplay-systems-bot",
+          "faq",
           {
             "group": "Discord Bot",
             "pages": [
@@ -63,8 +65,7 @@
           {
             "group": "Discord-Server & Community",
             "pages": [
-              "discord-server",
-              "supportserver"
+              "discord-server"
             ]
           },
           {
