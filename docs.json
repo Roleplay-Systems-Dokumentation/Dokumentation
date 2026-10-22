@@ -41,7 +41,8 @@
                   "verifikation",
                   "welcomer"
                 ],
-                "icon": "layout-dashboard"
+                "icon": "layout-dashboard",
+                "expanded": true
               }
             ]
           },
@@ -78,6 +79,33 @@
         "pages": [
           "dev/uebersicht",
           "dev/modulvorlage"
+        ]
+      },
+      {
+        "tab": "Changelogs",
+        "icon": "exchange",
+        "hidden": true,
+        "menu": [
+          {
+            "item": "Übersicht",
+            "pages": [
+              "willkommen-bei-unseren-changelogs"
+            ]
+          },
+          {
+            "item": "Bot-Changelogs",
+            "pages": [
+              "v-1-0",
+              "2-0-1"
+            ]
+          },
+          {
+            "item": "Dashboard-Changelogs",
+            "pages": [
+              "version-1-0",
+              "version-2-1"
+            ]
+          }
         ]
       }
     ]
