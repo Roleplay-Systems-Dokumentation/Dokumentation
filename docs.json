@@ -26,6 +26,7 @@
                   "anti-bot-system",
                   "cases",
                   "entbannungen",
+                  "Fahrzeugverwaltung",
                   "Geburtstagssystem",
                   "giveaways",
                   "haussystem",
@@ -37,7 +38,7 @@
                   "teamliste",
                   "ticket-system",
                   "verifikation",
-                  "untitled-page-14"
+                  "welcomer"
                 ],
                 "icon": "layout-dashboard"
               }
