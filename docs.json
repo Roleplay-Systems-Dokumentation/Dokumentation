@@ -2,7 +2,10 @@
   "$schema": "https://mintlify.com/docs.json",
   "name": "Roleplay Systems",
   "theme": "maple",
-  "favicon": "https://icons.duckduckgo.com/ip3/systems.nrw-roleplay.de.ico",
+  "favicon": {
+    "light": "/images/logo.png",
+    "dark": "/images/logo.png"
+  },
   "colors": {
     "primary": "#5865F2",
     "dark": "#5865F2",
@@ -107,7 +110,7 @@
       }
     ]
   },
-  "description": "Willkommen in der offiziellen Dokumentation von NRW Systems. Hier findest du Anleitungen zu unserem Bot und allgemeine Informationen.",
+  "description": "Willkommen in der offiziellen Dokumentation vom Roleplay Systems Bot. Hier findest du Anleitungen zu unserem Bot und allgemeine Informationen.",
   "appearance": {
     "strict": false,
     "default": "dark"
