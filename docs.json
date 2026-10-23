@@ -73,6 +73,14 @@
             "pages": [
               "dokumentation-feedback"
             ]
+          },
+          {
+            "group": "Roleplay Systems (Beta)",
+            "icon": "apps",
+            "hidden": true,
+            "pages": [
+              "untitled-page-3"
+            ]
           }
         ]
       },
