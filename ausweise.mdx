@@ -1,75 +1,111 @@
 ---
 title: "Ausweise"
-description: "Verwalte Ausweise, Führerscheine und Co. in einem System"
+description: "Verwalte Ausweise, Lizenzen und Scheine in einem zentralen System."
 icon:
   name: "e-passport"
   style: "regular"
   library: "tabler"
-tag: "Neu"
-hidden: true
+tag: "BETA"
+sidebarTitle: "Ausweise"
 ---
 
-## <Badge color="purple">Roleplay</Badge> <Badge color="green">Setup-Menü</Badge>
+<Note>
+  Mit dem Ausweissystem erstellst du individuelle Ausweise für deine RP-Community und simulierst ein virtuelles Bürgeramt. Wir empfehlen intern feste Regeln festzulegen, wie die Ausweise aufgebaut sein sollen/neue Scheine an den Nutzer verteilt werden sollen.
+</Note>
 
-Mit dem Auto-Menü führst du eine Kennzeichen- und Fahrzeugdatenbank für dein Adminteam. Teammitglieder können eigene Fahrzeuge eintragen und Einträge einsehen. Die Verwaltungsrolle kann zusätzlich Einträge ändern oder löschen.
-
-## Modul einrichten und bearbeiten
-
-Führe `/auto-setup` aus. Discord öffnet eine **ephemere Nachricht**, die nur du sehen kannst. Richte das Auto-Menü in dieser Auswahl ein.
+## Modul einrichten
 
 <Tabs>
-  <Tab title="Via Discord-Befehl" icon="discord">
+  <Tab title="Discord-Befehl" icon="discord">
     <Steps>
-      <Step title="Setup-Menü öffnen">
-        Führe `/auto-setup` aus. Die Auswahl erscheint als ephemere Nachricht und ist nur für dich sichtbar.
+      <Step title="Setup-Befehl ausführen">
+        Führe den Slash-Command `/ausweis-setup` aus. Discord öffnet eine ephemere Nachricht, die nur du sehen kannst.
       </Step>
-      <Step title="Kennzeichenpräfix festlegen">
-        Lege das Präfix fest, das den Ortskürzel-Teil des Kennzeichens bildet. Die übrigen Zeichen wählen Nutzer beim Eintragen.
+      <Step title="Verwaltungsrolle festlegen">
+        Wähle die Rolle aus, die Ausweisanträge genehmigen sowie Ausweise und Scheine von Nutzern verwalten darf.
       </Step>
-      <Step title="Rollen zuweisen">
-        Wähle eine Team-Rolle für das Eintragen eigener Fahrzeuge und das Einsehen aller Autos. Die Verwaltungsrolle erhält zusätzlich Rechte zum Ändern und Löschen.
+      <Step title="Panel-Kanal auswählen">
+        Bestimme den Kanal, in den das Ausweis-Panel gesendet werden soll (wird kein Kanal gewählt, wird der aktuelle Kanal genutzt).
       </Step>
-      <Step title="Fahrzeugtypen und Kanäle konfigurieren">
-        Wähle vordefinierte Fahrzeugtypen aus Spielen oder lege bis zu zehn eigene Typen fest. Bestimme den Menü-Kanal und optional einen Log-Kanal.
-      </Step>
-      <Step title="Setup abschließen">
-        Schließe das Setup ab, um das Menü im ausgewählten Kanal bereitzustellen.
+      <Step title="Einrichtung abschließen">
+        Sende den Befehl ab. Das Ausweis-Panel wird automatisch im gewählten Kanal erstellt.
       </Step>
     </Steps>
   </Tab>
-  <Tab title="Im Web-Dashboard" icon="sliders">
-    Im Dashboard kannst du eine bestehende Konfiguration anpassen. Ein neues Modul lässt sich dort nicht aktivieren.
+  <Tab title="Web-Dashboard" icon="sliders">
+    Im Dashboard kannst du bestehende Konfigurationen und Berechtigungen nachträglich anpassen.
+
+    _Hinweis: Die Erstaktivierung des Moduls erfolgt über den Discord-Befehl._
   </Tab>
 </Tabs>
 
-## Kernfunktionen im Überblick
+---
 
-<CardGroup cols={3}>
-  <Card title="Fahrzeuge eintragen" icon="plus">
-    Teammitglieder können eigene Fahrzeuge und Kennzeichen hinterlegen.
-  </Card>
+## Das Ausweis-Panel im Überblick
 
-  <Card title="Fahrzeuge finden" icon="search">
-    Das Menü zeigt die eigenen oder alle gespeicherten Fahrzeuge.
+Das generierte Panel im Kanal bietet zwei zentrale Interaktionsmöglichkeiten:
+
+<CardGroup cols={2}>
+  <Card title="Mein Ausweis" icon="user">
+    - **Ausweis anzeigen:** Zeigt dem Nutzer seinen eigenen Ausweis als ephemere (nur für ihn sichtbare) Nachricht an.
+    - **Beantragung:** Besitzt der Nutzer noch keinen Ausweis, öffnet sich automatisch das Antragsformular.
   </Card>
 
   <Card title="Verwaltung" icon="settings">
-    Berechtigte Mitglieder können Einträge bearbeiten oder löschen.
+    Öffnet das Verwaltungsmenü für Teammitglieder mit der konfigurierten Verwaltungsrolle.
   </Card>
 </CardGroup>
 
-## Einstellungen & Parameter
+---
 
-Im Menü stehen folgende Aktionen zur Verfügung:
+## Funktionen der Verwaltung
 
-- **Auto eintragen**, **Meine Autos** und **Alle Autos**.
-- Unter **Verwaltung** einen Nutzer und anschließend ein Fahrzeug auswählen, um das Kennzeichen zu ändern oder den Eintrag zu löschen.
-- **Nicht-Teameinträge löschen** sucht nach Einträgen von Nutzern ohne Team-Rolle. Die Löschung erfolgt erst nach Bestätigung.
+Mitglieder mit der Verwaltungsrolle haben über den Button **Verwaltung** Zugriff auf folgende Optionen:
 
-Der optionale Log-Kanal protokolliert Einträge, Änderungen, Korrekturen und Löschungen.
+<AccordionGroup>
+  <Accordion title="Ausweisanfragen" icon="new-section">
+    Übersicht aller neu eingereichten Ausweisanträge, die von der Verwaltung geprüft und genehmigt werden müssen.
+  </Accordion>
 
-## Wichtige Hinweise
+  <Accordion title="Änderungsanträge" icon="exchange">
+    Hier werden Anträge auf Datenänderungen (z. B. Namensänderungen oder Anpassungen im Ausweis) überprüft und freigegeben.
+  </Accordion>
 
-- Vergib die Verwaltungsrolle nur an Personen, die Fahrzeugdaten ändern oder löschen sollen.
-- Prüfe vor dem Löschen von Nicht-Teameinträgen die angezeigte Auswahl und bestätige erst danach.
-- Ein eigener Fahrzeugtyp ist nur möglich, wenn du weniger als zehn eigene Typen eingerichtet hast.
+  <Accordion title="Ausweise anpassen & Scheine" icon="certificate">
+    Wähle einen Nutzer aus (`User Select`), um ihm zusätzliche Scheine und Lizenzen (z. B. Führerschein, Waffenschein, Angelschein) zu **erteilen** oder zu **entziehen**.
+  </Accordion>
+
+  <Accordion title="Ausweis löschen" icon="trash">
+    Ermöglicht das vollständige Entfernen eines Ausweises. Nach Auswahl des Nutzers (`User Select`) und einer Bestätigungsabfrage wird der Ausweis endgültig gelöscht.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Befehle
+
+<Card title="/ausweis" icon="terminal">
+  Sendet den eigenen Ausweis oder den Ausweis eines ausgewählten Nutzers öffentlich in den aktuellen Chat-Kanal (ideal für RP-Situationen wie Polizeikontrollen).
+</Card>
+
+---
+
+## Häufig gestellte Fragen (FAQ)
+
+<AccordionGroup>
+  <Accordion title="Wer kann Ausweisanträge und Änderungen genehmigen?">
+    Nur Mitglieder mit der **Verwaltungsrolle**, die während des Setups über `/ausweis-setup` ausgewählt wurde, haben Zugriff auf das Verwaltungsmenü und die Anträge.
+  </Accordion>
+
+  <Accordion title="Wo sehe ich meinen eigenen Ausweis?">
+    Du kannst deinen Ausweis privat über den Button **„Mein Ausweis“** im Panel einsehen (nur für dich sichtbar) oder mit dem Befehl `/ausweis` öffentlich im Chat zeigen.
+  </Accordion>
+
+  <Accordion title="Wie kann ich einem Bürger einen Führerschein oder Waffenschein geben?">
+    Öffne im Ausweis-Panel den Bereich **Verwaltung**, wähle **„Ausweise anpassen & Scheine“**, wähle den entsprechenden Nutzer aus und vergebe oder entziehe dort die gewünschten Scheine.
+  </Accordion>
+
+  <Accordion title="Was passiert, wenn ein Ausweis gelöscht wird?">
+    Wird ein Ausweis über die Verwaltung gelöscht, werden alle eingetragenen Daten sowie erteilte Scheine des Nutzers unwiderruflich entfernt. Der Nutzer kann danach bei Bedarf einen neuen Ausweis beantragen.
+  </Accordion>
+</AccordionGroup>
