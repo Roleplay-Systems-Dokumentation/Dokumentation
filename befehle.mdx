@@ -1,0 +1,183 @@
+---
+title: "Befehlsübersicht"
+description: "Vollständige Übersicht aller Slash-Commands für den Roleplay Systems Bot."
+icon: "terminal"
+sidebarTitle: "Befehle"
+---
+
+<Note>
+  **Immer aktuell bleiben:** Mit dem Slash-Befehl `/all-commands` direkt auf deinem Discord-Server erhältst du stets die **aktuellste und live synchronisierte** Liste aller verfügbaren Befehle inkl. Echtzeit-Suche!
+</Note>
+
+## Nur VIP / PRO Module
+
+Diese Befehle stehen exklusiv auf Servern mit aktivem VIP-/PRO-Status zur Verfügung.
+
+### Teamliste
+
+<CardGroup cols={2}>
+  <Card title="/teamliste_setup" icon="users-group">
+    `[PRO]` Startet den Setup-Wizard für die Teamliste.
+  </Card>
+
+  <Card title="/teamliste_design" icon="palette">
+    `[PRO]` Embed-Design anpassen (Farbe, Titel, Footer, Status).
+  </Card>
+
+  <Card title="/teamliste_post" icon="send">
+    Postet die Teamliste in den aktuellen Kanal.
+  </Card>
+
+  <Card title="/teamliste_refresh" icon="rotate">
+    Aktualisiert die Teamliste sofort.
+  </Card>
+
+  <Card title="/teamliste_reset" icon="trash">
+    `[PRO]` Löscht die gesamte Teamlisten-Konfiguration.
+  </Card>
+
+  <Card title="/teamliste_info" icon="info-circle">
+    Zeigt die aktuelle Konfiguration der Teamliste.
+  </Card>
+
+  <Card title="/teamliste_check" icon="list-check">
+    Prüft die aktuelle Teamlisten-Konfiguration auf typische Probleme.
+  </Card>
+</CardGroup>
+
+---
+
+## 🌐 Module für alle Server
+
+Alle nachfolgenden Module und Befehle stehen jedem Server kostenlos zur Verfügung.
+
+<AccordionGroup>
+  <Accordion title="Ticket-System" icon="ticket">
+    - `/ticket-setup` – Öffnet das Setup für das Ticket-System
+    - `/ticket-panel` – Postet das persistente Ticket-Panel in den aktuellen Kanal
+    - `/ticket-transcript-channel <channel>` – Setzt den Kanal für Ticket-Transkripte
+    - `/ticket-manager <role>` – Fügt eine Ticket-Manager-Rolle hinzu oder entfernt sie
+    - `/ticket-info` – Zeigt die aktuelle Ticket-Konfiguration
+  </Accordion>
+
+  <Accordion title="Vorschlag-System" icon="sparkle-highlight">
+    - `/suggest <titel> <beschreibung> [kategorie]` – Reiche einen neuen Vorschlag für den Bot oder Server ein.
+    - `/suggestion <titel> <beschreibung> [kategorie]` – Alternative zum Einreichen eines Vorschlags.
+    - `/vorschlag-panel [kanal]` – Richtet das Einreich-Panel ein (direkt im Forum als Post oder in Text-Kanal).
+  </Accordion>
+
+  <Accordion title="Aktivitätscheck (Activity)" icon="chart-line">
+    - `/aktivitaet_setup <admin_role> [buttons] [menu] [Admin]` – Aktivitätscheck-Setup einrichten
+    - `/aktivitaet_create <channel> <ziel> <ueberschrift> <text> <stunden>` – Einen Aktivitätscheck erstellen
+    - `/aktivitaet_resend` – Aktivitätscheck-Menü erneut senden
+    - `/aktivitaet_setup_info` – Aktivitätscheck-Setup-Status anzeigen
+    - `/aktivitaet_auswerten` – Aktivitätscheck beenden und auswerten
+    - `/aktivitaet_cancel` – Aktuellen Aktivitätscheck sofort abbrechen
+    - `/aktivitaet_archive [page]` – Aktivitätscheck-Archiv anzeigen
+  </Accordion>
+
+  <Accordion title="Anti Bot" icon="robot">
+    - `/anti-bot-setup` – Anti-Bot-Überwachung konfigurieren
+    - `/anti-bot-resend` – Die Anti-Bot-Info im Überwachungskanal erneut senden
+  </Accordion>
+
+  <Accordion title="Geburtstagsmodul (Birthday)" icon="flag-spark">
+    - `/birthday-setup` – Richtet das Geburtstagsmodul ein
+    - `/birthday-set <tag> <monat> [glueckwunsch_benachrichtigung]` – Hinterlegt deinen Geburtstag (ohne Geburtsjahr)
+    - `/birthday-edit <tag> <monat> [glueckwunsch_benachrichtigung]` – Ändert deinen hinterlegten Geburtstag
+    - `/birthday-delete` – Löscht alle deine Geburtstagsdaten
+    - `/birthday_greet_resend` – Sendet die heutige Geburtstags-Glückwunschnachricht erneut
+    - `/birthday-setup-info` – Zeigt die Einstellungen des Geburtstagsmoduls
+  </Accordion>
+
+  <Accordion title="Case-System" icon="folder-open">
+    - `/case_setup [Admin]` – Öffnet das Case-Setup-Menü
+    - `/case_setup_resend [Admin]` – Sendet das Case-Menü erneut in den konfigurierten Kanal
+    - `/case_export [Admin]` – Exportiert alle Cases als JSON-Datei
+    - `/case_clear_dm` – Löscht  Nachrichten des Bots im DM-Kanal des Bots
+  </Accordion>
+
+  <Accordion title="Entbannungsanträge" icon="gavel">
+    - `/entbannung_setup [Admin]` – Entbannung-Setup starten
+    - `/entbannung_postmenu [Admin]` – Entbannungsmenü in den konfigurierten Kanal posten
+    - `/entbannung_fragen [Admin]` – Custom-Fragen für Entbannungsanträge konfigurieren
+    - `/entbannung_fragen_anzeigen [Admin]` – Aktuell konfigurierte Custom-Fragen anzeigen
+    - `/entbannung_unban <user> [Server verwalten]` – Hebt die Antragssperre eines Users auf
+  </Accordion>
+
+  <Accordion title="Fehlermeldungen & Sync" icon="bug">
+    - `/fehler <fehlertyp> <system> <prioritaet>` – Einen Fehler oder eine Störung melden
+    - `/sync_slash [Admin]` – Slash-Commands für diesen Server synchronisieren
+  </Accordion>
+
+  <Accordion title="Giveaways" icon="gift">
+    - `/giveaway-erstellen <dauer> <gewinneranzahl> <preis> [beschreibung] [kanal]` – Erstellt ein neues Giveaway
+    - `/giveaway-beenden <giveaway_id>` – Beendet ein laufendes Giveaway sofort
+    - `/giveaway-reroll <giveaway_id>` – Zieht neue Gewinner für ein beendetes Giveaway
+    - `/giveaway-info <giveaway_id>` – Zeigt Informationen zu einem Giveaway an
+  </Accordion>
+
+  <Accordion title="Häuser-System" icon="home">
+    - `/haus_setup [Server verwalten]` – Öffnet das moderne Setup für Häuserkarte und Panels
+    - `/haus-liste-einreichen` – Reicht eine eigene Hauskarte und Hausnamen zur Prüfung ein
+  </Accordion>
+
+  <Accordion title="Hilfe & Information" icon="help-square">
+    - `/all-commands [bereich] [suche]` – Öffnet das interaktive Verzeichnis aller verfügbaren Befehle
+    - `/hilfe_setup [Admin]` – In-Game Hilfe-System konfigurieren
+    - `/hilfe_panel_senden [Admin]` – Hilfe-Panel im konfigurierten Kanal senden
+    - `/status` – Den aktuellen Systemstatus anzeigen
+    - `/setupstatus [Admin]` – Status-Embed im aktuellen Kanal einrichten _(nur Supportserver)_
+  </Accordion>
+
+  <Accordion title="Fahrzeuge & Kennzeichen" icon="car">
+    - `/auto_setup [Admin]` – Fahrzeug-Setup konfigurieren
+    - `/auto_cars [Admin]` – Spiel-Preset oder eigene Fahrzeuge (max. 10) verwalten
+    - `/auto_resend [Admin]` – Fahrzeug-Menü erneut im konfigurierten Kanal senden
+  </Accordion>
+
+  <Accordion title="Personensystem" icon="users">
+    - `/personen_setup [Admin]` – Personensystem konfigurieren
+    - `/personen_resend [Admin]` – Personenmenüs erneut im konfigurierten Kanal senden
+  </Accordion>
+
+  <Accordion title="Roleplay-System (RPSystem)" icon="masks-theater">
+    - `/rp_setup [Admin]` – Roleplay-Panel konfigurieren
+    - `/rp_panel-resend [Admin]` – RP-Panel aktualisieren und aktuelle Statusnachricht neu senden
+    - `/rp_dm_settings` – Eigene RP-DM-Benachrichtigungen verwalten
+  </Accordion>
+
+  <Accordion title="Schichtsystem" icon="clock">
+    - `/shift_setup [Admin]` – Schichtsystem konfigurieren
+    - `/shift_resend [Admin]` – Schichtmenü erneut im konfigurierten Kanal senden
+    - `/stats [member]` – Schichtstatistik eines Mitglieds anzeigen
+  </Accordion>
+
+  <Accordion title="Serverstatus" icon="server">
+    - `/serverstatus_setup [Admin]` – Öffentliches und Verwaltungs-Panel einrichten
+    - `/serverstatus_send [Admin]` – Öffentliches Serverstatus-Panel veröffentlichen
+    - `/serverstatus_panel [Admin]` – Serverstatus-Verwaltungs-Panel öffnen
+    - `/serverstatus_refresh` – Öffentliches Serverstatus-Panel aktualisieren
+  </Accordion>
+
+  <Accordion title="Verifikation (Verify)" icon="user-check">
+    - `/verifikation_setup [lang] [Admin]` – Öffnet das Verifikations-Setup
+    - `/verifikation_resend [Admin]` – Sendet die Verifikationsnachricht erneut
+  </Accordion>
+
+  <Accordion title="Welcomer" icon="hand-stop">
+    - `/welcomer-setup` – Welcomer-Konfiguration starten
+  </Accordion>
+
+  <Accordion title="Special / Supportserver Exklusiv" icon="star">
+    - `/check-my-vip` – Prüft, ob du die VIP-Server-Kriterien erfüllst _(NRW VIP Legacy)_
+    - `/partner_setup [forum_id]` – Erstellt das Partnerschafts-Bewerbungs-Panel _(nur Supportserver)_
+    - `/partner-werden` – Zeigt Regeln und Anforderungen für eine Partnerschaft
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  **Hinweis zu KI-generierten Inhalten:** Teile dieses Artikels sowie die Beschreibungen der Befehle wurden mithilfe von Künstlicher Intelligenz (KI) erstellt oder aufbereitet. Trotz sorgfältiger Prüfung können Fehler, Abweichungen oder veraltete Angaben enthalten sein.
+
+  Maßgeblich sind stets die Live-Befehle und Einstellungen direkt im Discord-Server via `/all-commands`. Wenn du einen Fehler findest, melde ihn gerne über "Suggest edits" oder "Raise issue" oder auf unserem Support-Server!
+</Warning>

@@ -23,6 +23,7 @@
             "pages": [
               "bot-einladen",
               "schnellstart",
+              "befehle",
               {
                 "group": "Bot-Module",
                 "pages": [
