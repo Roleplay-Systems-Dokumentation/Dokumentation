@@ -78,7 +78,9 @@
             "group": "Roleplay Systems (Beta)",
             "icon": "apps",
             "pages": [
-              "untitled-page-3"
+              "untitled-page-3",
+              "ausweise",
+              "team-management"
             ],
             "tag": "Neu"
           }
