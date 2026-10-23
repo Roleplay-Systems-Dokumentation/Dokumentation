@@ -135,7 +135,7 @@
     "drilldown": true
   },
   "background": {
-    "decoration": "grid"
+    "decoration": "gradient"
   },
   "footer": {
     "socials": {
