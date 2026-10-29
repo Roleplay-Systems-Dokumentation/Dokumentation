@@ -5,40 +5,62 @@ icon: "rocket"
 sidebarTitle: "Willkommen"
 ---
 
-<img
-  src="/images/logo_light-3.png"
-  alt="Logo Light"
-  title="Logo Light"
-  lightAlt="Logo Light"
-  darkAlt="Logo Light"
-  className="mx-auto"
-  style={{ width:"55%" }}
-/>
+<div
+  style={{
+  position: "relative",
+  overflow: "hidden",
+  maxWidth: "900px",
+  margin: "0 auto 2.5rem",
+  padding: "clamp(1.75rem, 5vw, 3.25rem)",
+  border: "1px solid rgba(120, 110, 255, 0.22)",
+  borderRadius: "24px",
+  background: "linear-gradient(145deg, rgba(120, 110, 255, 0.08), rgba(88, 101, 242, 0.025))",
+  boxShadow: "0 18px 50px rgba(50, 45, 110, 0.08)",
+  textAlign: "center"
+}}
+>
+  <div
+    aria-hidden="true"
+    style={{
+    position: "absolute",
+    top: 0,
+    left: "15%",
+    width: "70%",
+    height: "2px",
+    background: "linear-gradient(90deg, transparent, rgba(120, 110, 255, 0.7), transparent)"
+  }}
+  />
 
-{/* Hero-Bereich mit Logo und Buttons */}
+  <img src="/images/logo_light-3.png" alt="Roleplay Systems Bot" title="Roleplay Systems Bot" lightAlt="Roleplay Systems Bot" darkAlt="Roleplay Systems Bot" className="mx-auto" style={{ width: "min(320px, 75%)", marginBottom: "1.25rem" }} />
 
-<div align="center" style={{ marginBottom: '2rem' }}>
-  <p style={{ fontSize: '1.2rem', color: '#888', maxWidth: '600px' }}>
+  <p style={{ fontSize: "1.15rem", maxWidth: "600px", margin: "0 auto", opacity: 0.8 }}>
     Verwalte, erweitere und professionalisiere deinen RP-Server mit Leichtigkeit.
   </p>
 
-  {/* Buttons direkt unter dem Logo */}
-
-  <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginTop: '1.5rem' }}>
+  <div
+    style={{
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "12px",
+    justifyContent: "center",
+    marginTop: "1.75rem"
+  }}
+  >
     <a
       href="https://discord.com/oauth2/authorize?client_id=1475955182675296288"
       target="_blank"
+      rel="noopener noreferrer"
       style={{
-backgroundColor: '#5865F2', 
-color: '#ffffff', 
-padding: '10px 20px', 
-borderRadius: '8px', 
-fontWeight: 'bold', 
-textDecoration: 'none',
-display: 'inline-flex',
-alignItems: 'center',
-gap: '8px'
-}}
+      backgroundColor: "#5865F2",
+      color: "#ffffff",
+      padding: "10px 20px",
+      borderRadius: "8px",
+      fontWeight: "bold",
+      textDecoration: "none",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "8px"
+    }}
     >
       Bot einladen
     </a>
@@ -46,15 +68,14 @@ gap: '8px'
     <a
       href="https://systems.nrw-roleplay.de"
       target="_blank"
+      rel="noopener noreferrer"
       style={{
-backgroundColor: '#1E1E2E', 
-color: '#ffffff', 
-border: '1px solid #313244',
-padding: '10px 20px', 
-borderRadius: '8px', 
-fontWeight: 'bold', 
-textDecoration: 'none'
-}}
+      padding: "10px 20px",
+      borderRadius: "8px",
+      border: "1px solid rgba(120, 110, 255, 0.35)",
+      fontWeight: "bold",
+      textDecoration: "none"
+    }}
     >
       Zum Dashboard
     </a>
