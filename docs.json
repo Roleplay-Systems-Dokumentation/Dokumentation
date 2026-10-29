@@ -56,7 +56,7 @@
           {
             "group": "Bot Dashboard",
             "pages": [
-              "untitled-page-2"
+              "public-api"
             ]
           },
           {
@@ -70,7 +70,7 @@
             "group": "Discord-Server & Community",
             "pages": [
               "discord-server",
-              "untitled-page-3"
+              "vip-features"
             ]
           },
           {
