@@ -83,7 +83,6 @@
             "icon": "apps",
             "pages": [
               "beta-features",
-              "ausweise",
               "team-management"
             ],
             "tag": "Neu"
