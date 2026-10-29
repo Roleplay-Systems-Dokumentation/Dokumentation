@@ -1,14 +1,90 @@
 ---
-icon:
-  name: "crown"
-  style: "regular"
-  library: "tabler"
-title: "VIP-Features"
-hidden: true
+icon: "crown"
+title: "VIP-System"
+description: "Erfahre alles über das VIP-System, dein Server-Kontingent und die exklusiven VIP-Features."
 ---
 
 import BearbeitungLukas from '/snippets/bearbeitung-lukas.mdx';
 
 <BearbeitungLukas />
 
-Hi
+Das VIP-System bietet dir Erweiterungen und Zusatzfunktionen für verschiedene Bot-Module. Du kannst dein Server-Kontingent flexibel verwalten und so VIP-Features auf deinen eigenen Discord-Servern freischalten.
+
+<CardGroup cols={2}>
+  <Card title="VIP-Panel öffnen" icon="brand-discord" href="https://discord.com/channels/1462452472332157062/1533483272347062402">
+    Verwalte deine VIP-Server und dein Rollen-Kontingent direkt über Discord.
+  </Card>
+
+  <Card title="Support erhalten" icon="lifebuoy" href="/discord">
+    Du hast Fragen zu deinem Kontingent? Nutze unseren Supportserver.
+  </Card>
+</CardGroup>
+
+<Note>
+  **Wichtiger Hinweis:** Das VIP-System ist komplett kostenfrei. Es ist **nicht** möglich, Geld zu bezahlen, um VIP-Features oder Kontingente zu erwerben.
+</Note>
+
+## Wie funktioniert das Server-Kontingent?
+
+Um VIP-Features auf einem Server nutzen zu können, musst du deinen Server in dein VIP-Kontingent eintragen. Deine maximal verfügbaren Server-Slots hängen von deinen Rollen auf dem **Hauptserver** ab.
+
+### Kontingent-Übersicht
+
+Die Plätze verschiedener Rollen werden automatisch addiert:
+
+- **TopGG Voter:** +1 Server
+- **VIP:** +2 Server
+- **Partner:** +1 Server
+- **Server Booster:** +1 Server
+- **Team / DevTeam:** +1 Server
+
+---
+
+## Server hinzufügen & verwalten
+
+Du kannst deine Server-Slots bequem über das **VIP-Panel** auf dem Discord-Server verwalten.
+
+### 1. Server hinzufügen
+
+- Der Bot muss sich bereits auf dem Zielserver befinden.
+- Du benötigst auf diesem Server die Rechte **Administrator** oder **Server verwalten**.
+- Wähle den gewünschten Server im Panel aus, um deinen Slot zuzuweisen.
+
+### 2. Einträge verwalten
+
+Unter **„Meine Server“** im VIP-Panel kannst du:
+
+- Deine aktuelle Nutzung und das verbleibende Kontingent einsehen.
+- Neue Server aktivieren oder bestehende Verknüpfungen wieder entfernen.
+
+### 3. Anpassung des Bot-Profils
+
+Auf einem aktiven VIP-Server kannst du das Erscheinungsbild des Bots individuell anpassen:
+
+- **Anpassbar:** Serverweiter Anzeigename und Server-Profilbild des Bots.
+- **Global (nicht pro Server einstellbar):** Status und die allgemeine Bot-Beschreibung.
+
+<Warning>
+  **Automatische Rollenprüfung:** Dein Kontingent wird regelmäßig überprüft. Sinkt dein Rollen-Kontingent (z. B. wenn ein Boost abläuft), bleiben nur deine **ältesten Einträge** aktiv. Überschüssige Server werden automatisch deaktiviert und bei neuem Kontingent wieder reaktiviert.
+</Warning>
+
+## VIP-Features erkennen
+
+VIP-Funktionen sind in der Dokumentation und in den Modulen klar gekennzeichnet:
+
+- **Modulübersicht:** Exklusive VIP-Module sind direkt mit einem **`VIP`**-Tag versehen.
+- **Optionale Extras:** Einzelne VIP-Erweiterungen innerhalb normaler Module sind mit einem speziellen Badge markiert.
+
+---
+
+## Weitere Informationen
+
+<CardGroup cols={2}>
+  <Card title="Modulübersicht" icon="home" href="/module">
+    Durchsuche alle verfügbaren Module und entdecke VIP-exklusive Funktionen.
+  </Card>
+
+  <Card title="Discord-Server" icon="brand-discord" href="/discord">
+    Tritt unserem Hauptserver bei, um Rollen zu erhalten und deine Slots zu erweitern.
+  </Card>
+</CardGroup>
