@@ -14,7 +14,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Dokumentation - Neu",
+        "tab": "Dokumentation",
         "pages": [
           "willkommen-beim-roleplay-systems-bot",
           "faq",
@@ -90,14 +90,16 @@
             ],
             "tag": "Neu"
           }
-        ]
+        ],
+        "icon": "book-2"
       },
       {
         "tab": "Dev",
         "pages": [
           "dev/uebersicht",
           "dev/modulvorlage"
-        ]
+        ],
+        "hidden": true
       },
       {
         "tab": "Changelog",
