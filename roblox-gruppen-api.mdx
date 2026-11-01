@@ -28,10 +28,6 @@ Es stehen zwei Optionen zur Verfügung, um Roblox-Ränge den System- bzw. Discor
 - **Smart-Auto-Mapping:** Erkennt passende Rollen (z. B. _Polizei_, _Team_, _Fraktion_) automatisch und nimmt die Zuordnung vor.
 - **Manuelle Zuweisung (`Recht ↔ Rolle zuweisen`):** Erlaubt das gezielte, manuelle Festlegen von einzelnen Rechte-Paaren.
 
-<Frame caption="Dashboard-Ansicht der Ausfall- und Mapping-Optionen">
-  {/* Hier ein Screenshot der Buttons für Smart-Auto-Mapping und manuelle Zuweisung */}
-</Frame>
-
 ---
 
 ## 3. Automatischer Rangwechsel
@@ -53,11 +49,10 @@ Damit Ränge automatisch geändert werden können, musst du **eine der beiden** 
     Erstelle einen neuen Key mit folgenden Parametern:
 
     - **Berechtigungen:** `group.membership:read` und `group.membership:write` (zugewiesen an deine Gruppe).
-    - **IP-Freigabe:** `0.0.0.0/0`
   </Step>
 </Steps>
 
-### Option B: Bot-Account Cookie (Schnelle Einrichtung)
+### Option B: Bot-Account Cookie
 
 - Trage das `.ROBLOXSECURITY`-Cookie eines **Bot-Accounts** ein, der in deiner Gruppe über ausreichende Rang-Verwaltungsrechte verfügt.
 - Diese Methode ist sofort einsatzbereit.
@@ -75,6 +70,12 @@ Falls **keine** Authentifizierung (weder API Key noch Cookie) hinterlegt ist, sc
 - Bei der Annahme eines Antrags generiert der Bot einen **Direktlink zur gefilterten Roblox-Mitgliedersuche**.
 - Über diesen Link gelangst du sofort zur entsprechenden Person und kannst den Rang mit einem Klick manuell anpassen.
 
-<Frame caption="Discord-Nachricht des Bots mit dem Direktlink zur gefilterten Mitgliedersuche">
-  {/* Hier ein Screenshot der Bot-Nachricht mit dem Link */}
+<Frame>
+  <img
+    src="/images/manuelle_Gruppenzuweisung.png"
+    alt="Discord-Nachricht des Bots mit dem Direktlink zur gefilterten Mitgliedersuche"
+    title="Manuelle Gruppenzuweisung"
+    className="mx-auto"
+    style={{ width:"62%" }}
+  />
 </Frame>
