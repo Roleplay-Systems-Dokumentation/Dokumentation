@@ -4,9 +4,86 @@ icon:
   name: "exchange"
   style: "regular"
   library: "tabler"
-description: "Auf dieser Seite findest du den Changelog von Roleplay-Systems. Ausführliche Update-Logs kann man per klicken auf das betreffende Update anzeigen lassen."
+description: "Auf dieser Seite findest du den Changelog von Roleplay-Systems. Ausführliche Update-Logs kann man per Klicken auf das betreffende Update anzeigen lassen."
 ---
 
 import BearbeitungLukas from '/snippets/bearbeitung-lukas.mdx';
 
 <BearbeitungLukas />
+
+<Update label="01.11.2026" description="v2.7.0">
+  ## Version 2.7.0
+
+  - **Schicht-System:** TeamZeit + Setup-Wizard hinzugefügt.
+  - **VIP-System:** Das VIP-System wurde erweitert.
+  - **Personensystem:** Setup erweitert und Liste in einen Kanal senden bei Membern ohne Eintrag.
+  - **Zentrales Setup:** Grundlegendes Setup (`/setup` und automatisch bei Bot-Beitritt) für Serversprache, Roblox (Ja/Nein) und Broadcastkanal, welche global für alle Module gelten.
+  - **Fahrzeugsystem:** Custom-Fahrzeuge sind nun bis zu 3 für alle verfügbar, darüber hinaus als VIP-Funktion inklusive neuem Setup.
+</Update>
+
+<Update label="26.10.2026" description="v2.6.1">
+  ## Version 2.6.1
+
+  ### Bugfix: Personensystem
+
+  - **Setup-Wizard:** Setup-Wizard wurde erweitert.
+  - **Roblox-Gruppen:** Standardmäßig deaktiviert.
+</Update>
+
+<Update label="26.10.2026" description="v2.6.0">
+  ## Version 2.6.0
+
+  ### Personensystem
+
+  - **Roblox-Verknüpfungen:** Unterstützung für Roblox-Gruppenverknüpfung und Roblox-Nutzernamen.
+
+  ### Aktivitätschecks
+
+  - **Neues Menü:** Überarbeitete Benutzeroberfläche.
+  - **Archivierung:** `/aktivitaet_archive` zeigt nun auch das Abstimmungsverhalten der Nutzer an.
+  - **VIP Feature:** 2 Checks gleichzeitig laufen lassen.
+
+  ### Ticket-System
+
+  - **Design & Usability:** Neues Design, einfacher, benutzerfreundlicher und höher anpassbar.
+  - **Transkripte:** Transkripte funktionieren wieder einwandfrei.
+
+  ### RP-System
+
+  - **Multi-Server:** Server 1 / Server 2 (VIP) steuerbar.
+  - **V2 Components:** Aktualisiert auf V2 Components.
+  - **DM-Zustellung:** Fehler behoben – Zustellung erfolgt nun ohne Rate-Limits.
+  - **Serverstatus Integration:** Server 1 dient als Quelle für das "Serverstatus"-Modul.
+
+  ### Serverstatus
+
+  - **Quelle:** Server 1 des RP-Moduls ist nun die zentrale Quelle.
+</Update>
+
+<Update label="16.10.2026" description="v2.5.1">
+  ## Version 2.5.1
+
+  ### Kennzeichen-System
+
+  - **Fehlerbehebung:** Rechtschreibfehler in Presets korrigiert.
+  - **Community-Presets:** Neue Presets können nun über den Community-Kanal eingereicht/vorgeschlagen werden.
+</Update>
+
+<Update label="16.10.2026" description="v2.5.0">
+  ## Version 2.5.0
+
+  ### Serverstatus
+
+  - **Schnellauswahl:** Neuer Button zum schnellen Setzen des Serverstatus auf "leer", "halbvoll" oder "voll".
+  - **Synchronisierung:** "Panel aktualisieren" synchronisiert nun auch neu hinzugefügte Buttons.
+
+  ### Personensystem
+
+  - **Stabilität:** Das Löschen von Nicht-Teameinträgen bricht die Aktion seitens Discord nicht mehr automatisch ab (Betroffener Shard: #1).
+
+  ### Kennzeichen-System
+
+  - **Presets für Fahrzeuge:** Voreingestellte Fahrzeuge für verschiedene Spiele verfügbar (individuell anpassbar).
+  - **Fahrzeug-Aktualisierung:** Beim Laden eines neuen Presets werden alte Daten nicht gelöscht, sondern als "veraltet" archiviert.
+  - **Verwaltung:** Funktionen für Kennzeichenlöschung und Kennzeichensuche hinzugefügt.
+</Update>
